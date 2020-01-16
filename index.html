@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="UTF-8">
     <title>Chain Docs</title>
-    <link rel="icon" href="https://docsify.js.org/_media/favicon.ico">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@latest/themes/vue.css">
 </head>
 <body>
 <div id="app">Loading...</div>
 <script>
     window.$docsify = {
+        el: '#app',
+        repo: 'https://github.com/zhcppy/zhcppy.github.io',
+        maxLevel: 4,
+        subMaxLevel: 3,
         loadSidebar: true,
-        subMaxLevel: 3
+        loadNavbar: true,
+        coverpage: true,
+        notFoundPage: true
     }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/search.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-go.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
 </body>
 </html>
