@@ -6,16 +6,19 @@ set -e
 
 root=`pwd`
 
-PublicIP=""
+IPAddr=""
 Domain=""
-NetworkName="xx_bridge"
+NetworkName="zhcppy_bridge"
+if [ IPAddr == "" || Domain == "" ]; then
+    echo "please set docker registry IP address and Domain";exit 1;
+fi
 
 function change_hosts() {
-    if [[ `uname` == "Linux" || `cat /etc/hosts | grep function.x` ]];then
+    if [[ `uname` == "Linux" || `cat /etc/hosts | grep ${Domain}` ]];then
         return
     fi
     echo "please input computer password"
-    echo "$PublicIP $Domain" | sudo tee -a /etc/hosts
+    echo "$IPAddr $Domain" | sudo tee -a /etc/hosts
 }
 
 function change_docker_daemon() {

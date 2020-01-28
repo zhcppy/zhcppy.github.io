@@ -1,4 +1,3 @@
-
 ## About Docker CE
 
 Docker Community Edition (CE) -- Docker 社区版
@@ -8,6 +7,7 @@ Docker Engine -- Docker 引擎
 Docker Client -- Docker 客户端
 
 ## Docker Machine
+
 Docker Machine是一个工具，可让在虚拟主机上安装Docker Engine，并使用docker-machine命令管理主机
 
 * 在Mac或Windows上安装并运行Docker
@@ -25,48 +25,55 @@ Bins/Libs：一些工具和用户空间的库，容器是在主机管理的一�
 DockerFile相当与一道菜的菜谱
 
 ## 为什么要用docker
-解决环境问题
-方便运维管理，方便开发测试
+
+解决环境问题，方便运维管理，方便开发测试
 
 # Docker Command TODO
 
 * 移除所有无用镜像
+
 ```bash
 docker rmi -f $(docker images | awk '$1 == "<none>" {print $3}')
 docker rm -f `docker imaages -a | grep "<none>" | awk '{print $3}'`
 ```
+
 * 移除所有容器
+
 ```bash
 docker rm -f `docker ps -a | awk '{print $1}'`
 docker rm $(docker ps -a | awk '{if($0~"Exited")print $1}')
-
 ```
 
 * ubuntu下添加不安全仓库
-```bash
-echo "192.168.20.78 function.x" | sudo tee -a /etc/hosts
 
-echo '{"insecure-registries":["function.x:5000"]}' | sudo tee -a /etc/docker/daemon.json
+```bash
+echo "192.168.20.78 zhcppy" | sudo tee -a /etc/hosts
+
+echo '{"insecure-registries":["zhcppy:5000"]}' | sudo tee -a /etc/docker/daemon.json
 ```
 
 * ubuntu下重启docker
+
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
 * docker容器中安装ping工具
+
 ```bash
 apt update
 apt install -y iputils-ping
 ```
 
 * docker容器时区修改
+
 ```bash
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 ```
 
 * Manage Docker as a non-root user
+
 ```bash
 sudo groupadd docker
 sudo usermod -aG docker ${USER}
