@@ -1,3 +1,5 @@
+# Docker
+
 ## About Docker CE
 
 Docker Community Edition (CE) -- Docker 社区版
@@ -24,11 +26,17 @@ Bins/Libs：一些工具和用户空间的库，容器是在主机管理的一�
 
 DockerFile相当与一道菜的菜谱
 
-## 为什么要用docker
+## 为什么要用 Docker
 
 解决环境问题，方便运维管理，方便开发测试
 
-# Docker Command TODO
+## Docker 安装（Linux）
+
+```bash
+wget -c https://raw.githubusercontent.com/zhcppy/zhcppy.github.io/master/docker/install_docker.sh | bash
+```
+
+## Docker Command TODO
 
 * 移除所有无用镜像
 

@@ -73,34 +73,6 @@ sudo service cron stop      # 停止
 sudo service cron status    # 查看服务状态
 ```
 
-### ubuntu
-
-#### ubuntu apt-get install 失败的情况
-
-一般是由于依赖包引起的，如果没有找的依赖包，可以更换软件源，
-如果是本身电脑安装的版本高于所需版本，可以试着先卸载依赖包版本一致的那个软件，
-然后再安装，这里卸载的时候要注意，卸载的依赖包会不会影响到其他的软件。
-
-#### ubuntu VirtualBox 使用usb设备
-
-下载版本对应的[扩展](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html#extpack)，
-在【管理 > 全局设定 > 扩展】添加进去就可以了
-
-* 添加usbfs用户组
-
-```shell script
-sudo groupadd usbfs
-```
-
-* 将你的Linux常用用户添加到vboxusers、usbfs这个两个组中
-
-```shell script
-sudo adduser xx vboxusers  
-sudo adduser xx usbfs
-```
-
-> 如果还是没有，可以尝试重启电脑
-
 #### 修改 Linux swap 分区
 
 * 查看交换分区信息
@@ -141,3 +113,31 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 # 系统将数据从RAM交换到交换空间的频率(0-100)
 cat /proc/sys/vm/swappiness
 ```
+
+### ubuntu
+
+#### ubuntu apt-get install 失败的情况
+
+一般是由于依赖包引起的，如果没有找的依赖包，可以更换软件源，
+如果是本身电脑安装的版本高于所需版本，可以试着先卸载依赖包版本一致的那个软件，
+然后再安装，这里卸载的时候要注意，卸载的依赖包会不会影响到其他的软件。
+
+#### ubuntu VirtualBox 使用usb设备
+
+下载版本对应的[扩展](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html#extpack)，
+在【管理 > 全局设定 > 扩展】添加进去就可以了
+
+* 添加usbfs用户组
+
+```shell script
+sudo groupadd usbfs
+```
+
+* 将你的Linux常用用户添加到vboxusers、usbfs这个两个组中
+
+```shell script
+sudo adduser xx vboxusers  
+sudo adduser xx usbfs
+```
+
+> 如果还是没有，可以尝试重启电脑
