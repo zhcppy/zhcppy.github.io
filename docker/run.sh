@@ -2,30 +2,33 @@
 
 # shell is funny
 
-echo "设置本地 docker registry"
-
 set -e
 
-root=`pwd`
+root=$(pwd)
 
-IPAddr=""
-Domain=""
-NetworkName="zhcppy_bridge"
-read -p "Please input docker registry IP: " IPAddr
-read -p "Please input docker registry Domain: " Domain
-if [ IPAddr == "" || Domain == "" ]; then
-    echo "please set docker registry IP address and Domain";exit 1;
-fi
+function init_deploy_env() {
+    echo "设置本地 docker registry"
+    # shellcheck disable=SC2006
+    if [[ ! -f `which docker` ]]; then
+        echo "please install docker or start docker"
+        exit
+    fi
 
-function change_hosts() {
+    IPAddr=""
+    Domain=""
+    NetworkName="zhcppy_bridge"
+    read -p "Please input docker registry IP: " IPAddr
+    read -p "Please input docker registry Domain: " Domain
+    if [[ IPAddr == "" || Domain == "" ]]; then
+        echo "please set docker registry IP address and Domain";exit 1;
+    fi
+
     if [[ `uname` == "Linux" || `cat /etc/hosts | grep ${Domain}` ]];then
         return
     fi
     echo "please input computer password"
     echo "$IPAddr $Domain" | sudo tee -a /etc/hosts
-}
 
-function change_docker_daemon() {
     if [[ `uname` == "Linux" || `cat ~/.docker/daemon.json | grep ${Domain}` ]]; then
         return
     fi
@@ -39,38 +42,19 @@ function change_docker_daemon() {
 }
 EOF
     if [[ ! -f `which docker` ]]; then
-        echo "please install docker or start docker"
-        exit
+        echo "please install docker or start docker"; exit 1
     fi
     osascript -e 'quit app "Docker"'
     open -a Docker
 
     sleep 30
-}
 
-function user_defined_bridge_network() {
-
-    if [[ `docker network ls | grep ${NetworkName}` ]]; then
-        return
-    else
+    if [[ ! `docker network ls | grep ${NetworkName}` ]]; then
         docker network create --driver bridge ${NetworkName}
-#        docker network inspect ${NetworkName}
+        # docker network inspect ${NetworkName}
     fi
 
     docker network ls
-}
-
-function init_deploy_env() {
-    if [[ ! -f `which docker` ]]; then
-        echo "please install docker or start docker"
-        exit
-    fi
-
-    change_hosts
-
-    change_docker_daemon
-
-    user_defined_bridge_network
 
     echo "init done . . ."
 }
@@ -99,11 +83,11 @@ case ${1} in
         cd ${root}/registry/ && docker-compose up -d && echo
         cd ${root}/registry_manage/ && docker-compose up -d && echo
         cd ${root}/portainer/ && docker-compose up -d
-        echo && docker ps -a | grep fx && echo;exit;;
+        echo && docker ps -a && echo;exit;;
     -d|--deploy) DIR=${root}/${2}
         check_app ${2};
         cd ${DIR} && docker-compose pull && docker-compose up -d
-        echo && docker ps -a | grep fx && echo;exit;;
+        echo && docker ps -a && echo;exit;;
     *)
         run_help;;
 esac

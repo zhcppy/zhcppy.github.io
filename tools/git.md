@@ -47,7 +47,7 @@ git commit --amend
 
 ```bash
 git remote rm origin
-git remote add origin git@github.com:zhcppy/bitcoin-testnet-box.git
+git remote add origin git@github.com:zhcppy/zhcppy.github.io.git
 ```    
 
 ### git pull 免密码

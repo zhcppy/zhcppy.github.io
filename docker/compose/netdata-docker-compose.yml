@@ -1,0 +1,37 @@
+# Author: zhcppy
+# Time: 2019.07.15
+# doc:
+#   - 实时性能监控，使用高度交互的Web仪表板 https://github.com/netdata/netdata
+#
+
+version: "3.5"
+
+services:
+  netdata:
+    container_name: netdata
+    image: netdata/netdata:latest
+    ports:
+      - 5999:19999
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: always
+    networks:
+      - zhcppy_net
+#    deploy:
+#      mode: replicated
+#      replicas: 1
+#      restart_policy:
+#        condition: on-failure
+#        delay: 500ms
+#        max_attempts: 3
+
+networks:
+  zhcppy_net:
+    external: true
+    driver: bridge

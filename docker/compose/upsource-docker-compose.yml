@@ -1,0 +1,27 @@
+# Author: zhcppy
+# Time: 2019.07.15
+# doc:
+#    - code review tools
+# command:
+#    - docker run -d -name upsource -p 8080:8080 jetbrains/upsource:2018.1.584
+
+version: "3.5"
+
+services:
+  jetbrains_upsource:
+    container_name: jetbrains_upsource
+    image: jetbrains/upsource:2018.1.584
+    ports:
+      - "8080:8080"
+    volumes:
+      - data:/opt/upsource/data
+      - conf:/opt/upsource/conf
+      - logs:/opt/upsource/logs
+      - backups:/opt/upsource/backups
+    networks:
+      - zhcppy_net
+
+networks:
+  zhcppy_net:
+    external: true
+    driver: bridge

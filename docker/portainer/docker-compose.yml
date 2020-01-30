@@ -1,0 +1,34 @@
+# Author: zhcppy
+# Time: 2019.07.15
+# doc:
+#   - 通过UI管理Docker https://github.com/portainer/portainer
+#
+
+version: "3.5"
+
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer:latest
+    ports:
+      - "5900:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/data
+    restart: always
+    extra_hosts:
+      - "zhcppy:192.168.20.78"
+    networks:
+      - zhcppy_net
+#    deploy:
+#      mode: replicated
+#      replicas: 1
+#      restart_policy:
+#        condition: on-failure
+#        delay: 500ms
+#        max_attempts: 3
+
+networks:
+  zhcppy_net:
+    external: true
+    driver: bridge

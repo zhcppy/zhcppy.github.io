@@ -1,0 +1,20 @@
+# Author: zhcppy
+# Time: 2019.08.08
+# command:
+#    - docker run -d -name nginx -p 80:80 nginx:latest
+#
+
+version: "3.5"
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    restart: always
+#  extra_hosts:
+#    - "zhcppy:192.168.20.78"

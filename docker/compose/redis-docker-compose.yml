@@ -1,0 +1,23 @@
+# Author: zhcppy
+# Time: 2019.07.15
+# command:
+#   - docker run -it --network fx_network --rm redis redis-cli -h fx_redis
+
+version: "3.5"
+
+services:
+  redis:
+    container_name: redis
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    restart: always
+    networks:
+      - zhcppy_net
+
+networks:
+  zhcppy_net:
+    external: true
+    driver: bridge

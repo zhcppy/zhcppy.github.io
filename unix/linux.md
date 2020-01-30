@@ -3,26 +3,11 @@
 ```bash
 du -smh # 查看文件(夹)大小
 
-scp # 远程文件拷贝
-
-curl -O https://zhcppy.github.io/README.md # 文件下载
-
 tar -zxvf # 解压tar.gz文件
 tar -zcvf # 压缩tar.gz文件
 
 curl ip.sb # 获取IP地址
 
-# Terminal set proxy
-export ALL_PROXY=socks5://127.0.0.1:1086
-export http_proxy=http://127.0.0.1:1086
-export https_proxy=https://127.0.0.1:1086
-export http_proxy=socks5://127.0.0.1:1086
-export https_proxy=socks5://127.0.0.1:1086
-# Terminal cancel proxy
-unset ALL_PROXY http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
-```
-
-```bash
 # Linux查看系统开启启动时间情况
 systemd-analyze blame
 systemd-analyze critical-chain

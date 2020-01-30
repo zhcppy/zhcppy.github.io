@@ -1,0 +1,23 @@
+# Author: zhcppy
+# Time: 2019.7.15
+# command:
+#   - docker exec -it ipsec-vpn-server ipsec status
+#   - docker exec -it ipsec-vpn-server ipsec whack --trafficstatus
+
+version: "3.5"
+
+services:
+  ipsec-vpn:
+    container_name: ipsec-vpn
+    image: hwdsl2/ipsec-vpn-server
+    hostname: ipsec-vpn-server
+    privileged: true
+    network_mode: host
+    env_file:
+      - vpn.env
+    ports:
+      - "500:500/udp"
+      - "4500:4500/udp"
+    volumes:
+      - /lib/modules:/lib/modules:ro
+    restart: always

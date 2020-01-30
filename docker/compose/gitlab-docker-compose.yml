@@ -1,0 +1,29 @@
+# Author: zhcppy
+# Time: 2019.08.08
+# command:
+#   - docker run -d -P --restart no --name gitlab  gitlab/gitlab-ce:latest
+#   - docker run -d -p 10022:22 -p 10080:3000 -v /var/gogs:/data --name=gogs gogs/gogs
+#   - docker run -d -P --name=gogs gogs/gogs
+
+version: "3.5"
+
+services:
+  gitlab:
+    container_name: gitlab
+    image: gitlab/gitlab-ce:latest
+    restart: always
+    ports:
+      - "2289:22"
+      - "8080:80"
+      - "4430:443"
+    volumes:
+      - ./data/data:/var/opt/gitlab
+      - ./data/logs:/var/log/gitlab
+      - ./data/config:/etc/gitlab
+    networks:
+      - zhcppy_net
+
+networks:
+  zhcppy_net:
+    external: true
+    driver: bridge

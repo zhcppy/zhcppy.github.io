@@ -1,0 +1,34 @@
+# Author: zhcppy
+# Time: 2019.07.15
+# doc:
+#   - https://github.com/snagles/docker-registry-manager
+#
+
+version: "3.5"
+
+services:
+  registry_manager:
+    container_name: registry_manager
+    image: snagles/docker-registry-manager
+    networks:
+      - zhcppy_net
+    ports:
+      - "5002:5002"
+    volumes:
+      - ./registries.yml:/app/registries.yml
+      #- ./ssl.crt:/app/ssl.crt # https certfile location
+      #- ./ssl.key:/app/ssl.key # https keyfile location
+
+    environment:
+      - MANAGER_PORT=5002
+      - MANAGER_REGISTRIES=/app/registries.yml
+      - MANAGER_LOG_LEVEL=warn
+      #- MANAGER_ENABLE_HTTPS=true
+      #- MANAGER_KEY=/app/ssl.crt
+      #- MANAGER_CERTIFICATE=/app/ssl.key
+    restart: always
+
+networks:
+  zhcppy_net:
+    external: true
+    driver: bridge

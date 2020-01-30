@@ -1,0 +1,24 @@
+# Author: zhcppy
+# Time: 2019.08.15
+# command:
+#   - docker run --name wordpress -e WORDPRESS_DB_HOST=192.168.20.18:3306 -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=root1234 -p 192.168.20.18:80:80 -d wordpress
+
+version: "3.5"
+
+services:
+  wordpress:
+    container_name: wordpress
+    image: wordpress
+    ports:
+      - "80:80"
+    environment:
+      - WORDPRESS_DB_HOS=192.168.20.18:3306
+      - WORDPRESS_DB_USER=root
+      - WORDPRESS_DB_PASSWORD=root1234
+    networks:
+      - zhcppy_net
+
+networks:
+  zhcppy_net:
+    external: true
+    driver: bridge

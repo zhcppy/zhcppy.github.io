@@ -1,0 +1,24 @@
+# Author: zhcppy
+# Time: 2019.07.15
+# command:
+#    - docker run -d -name jenkins -p 8080:8080 -p 50000:50000 jenkins
+#    - docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+version: "3.5"
+
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - data/home:/var/jenkins_home
+    networks:
+      - zhcppy_net
+
+networks:
+  zhcppy_net:
+    external: true
+    driver: bridge
