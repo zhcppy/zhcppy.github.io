@@ -12,14 +12,31 @@
 <div id="app">Loading...</div>
 <script>
     window.$docsify = {
-        el: '#app',
-        repo: 'https://github.com/zhcppy/zhcppy.github.io',
-        maxLevel: 4,
-        subMaxLevel: 3,
-        loadSidebar: true,
-        loadNavbar: true,
-        // coverpage: true,
-        notFoundPage: true
+        el: '#app', //初始化时挂载的DOM元素
+        repo: 'zhcppy/zhcppy.github.io', //右上角添加GitHub Corner小部件
+        maxLevel: 4, //内容中最大级别
+        // loadNavbar: true, //加载导航栏
+        loadSidebar: true, //加载侧边栏
+        subMaxLevel: 3, //在自定义侧边栏中添加目录最大级别
+        auto2top: true, //更改路线时滚动到屏幕顶部
+        homepage: 'README.md', //主页
+        basePath: '', //基础路径
+        // relativePath: true, //启用相对路径
+        // coverpage: true, //启用封面
+        logo: '', //侧边栏中的网站徽标
+        name: 'zhcppy', // 侧栏中显示的网站名称
+        nameLink: '/#/README', //名称链接
+        themeColor: '#42b983', //主题颜色
+        noEmoji: false, //禁用表情符号
+        mergeNavbar: true, //小屏幕上合并导航栏
+        formatUpdated: '{YYYY} {MM}/{DD} {HH}:{mm}:{ss}.{fff}', //通过{docsify-updated }变量显示文件更新日期
+        externalLinkTarget: '_blank', //在标记外打开外部链接 '_self'
+        routerMode: 'hash', // 路由模式'history'
+        ext: '.md', // 请求文件扩展名
+        notFoundPage: true, //加载404页面
+        alias: {
+            '/.*/_sidebar.md': '/_sidebar.md'
+        } //路由别名
     }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
@@ -28,5 +45,6 @@
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-go.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
 </body>
 </html>

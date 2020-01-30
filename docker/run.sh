@@ -2,6 +2,8 @@
 
 # shell is funny
 
+echo "设置本地 docker registry"
+
 set -e
 
 root=`pwd`
@@ -9,6 +11,8 @@ root=`pwd`
 IPAddr=""
 Domain=""
 NetworkName="zhcppy_bridge"
+read -p "Please input docker registry IP: " IPAddr
+read -p "Please input docker registry Domain: " Domain
 if [ IPAddr == "" || Domain == "" ]; then
     echo "please set docker registry IP address and Domain";exit 1;
 fi

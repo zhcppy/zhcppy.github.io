@@ -7,6 +7,7 @@ TIME_NOW=$$(date +"%Y-%m-%d %H:%M.%S")
 .PHONY: push
 msg=$$(sed -n "$$(($$RANDOM%6521))p" .motto)
 push:
+	@git add .
 	@git commit -m "$(msg)" && git push origin master
 
 preview:

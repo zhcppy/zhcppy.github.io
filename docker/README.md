@@ -33,7 +33,7 @@ DockerFile相当与一道菜的菜谱
 ## Docker 安装（Linux）
 
 ```bash
-wget -c https://raw.githubusercontent.com/zhcppy/zhcppy.github.io/master/docker/install_docker.sh | bash
+wget -cqO- https://raw.githubusercontent.com/zhcppy/zhcppy.github.io/master/docker/install_docker.sh | bash
 ```
 
 ## Docker Command TODO
