@@ -29,13 +29,14 @@
         name: 'zhcppy', // 侧栏中显示的网站名称
         nameLink: '/#/README', //名称链接
         themeColor: '#42b983', //主题颜色
+        executeScript: false, //执行页面上的脚本（仅解析第一个脚本标签）
         noEmoji: false, //禁用表情符号
         mergeNavbar: true, //小屏幕上合并导航栏
         formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}', //通过{docsify-updated}变量显示文件更新日期
         externalLinkTarget: '_blank', //在标记外打开外部链接 '_self'
         routerMode: 'hash', // 路由模式'history'
         ext: '.md', // 请求文件扩展名
-        notFoundPage: true, //加载404页面
+        notFoundPage: false, //加载404页面
         alias: { //路由别名
             '/.*/_sidebar.md': '/_sidebar.md'
         },
