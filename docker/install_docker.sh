@@ -3,9 +3,7 @@
 # shell is funny
 
 # 安装最新版docker
-
 # install docker by ubuntu [https://docs.docker.com/install/linux/docker-ce/ubuntu/]
-
 # export http_proxy=socks5://127.0.0.1:1086;export https_proxy=socks5://127.0.0.1:1086;
 
 if [[ -f $(which docker) ]]; then

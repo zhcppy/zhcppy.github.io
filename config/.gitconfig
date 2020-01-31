@@ -1,0 +1,5 @@
+[core]
+        excludesfile = \"$HOME\"/.gitignore_global
+[user]
+        name = zhanghang
+        email = zhcppy@icloud.com

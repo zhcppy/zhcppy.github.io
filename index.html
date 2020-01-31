@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="UTF-8">
     <title>zhcppy</title>
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="https://docsify.js.org/_media/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@latest/themes/vue.css">
 </head>
 <body>
@@ -34,11 +34,19 @@
         routerMode: 'hash', // 路由模式'history'
         ext: '.md', // 请求文件扩展名
         notFoundPage: true, //加载404页面
-        alias: {
+        alias: { //路由别名
             '/.*/_sidebar.md': '/_sidebar.md'
-        } //路由别名
+        },
+        search: { //搜索
+            placeholder: 'Search', //占位符
+            noData: 'No Results!',
+            depth: 2, //Headline depth, 1 - 6
+            hideOtherSidebarContent: false, //是否隐藏其他侧边栏内容
+            namespace: 'zhcppy',
+        },
     }
 </script>
+<script src="plugins.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/search.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>

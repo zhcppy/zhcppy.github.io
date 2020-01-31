@@ -36,6 +36,10 @@ DockerFile相当与一道菜的菜谱
 wget -cqO- https://raw.githubusercontent.com/zhcppy/zhcppy.github.io/master/docker/install_docker.sh | bash
 ```
 
+**docker安装脚本：**
+
+[](install_docker.sh ':include :type=code bash')
+
 ## Docker Command TODO
 
 * 移除所有无用镜像

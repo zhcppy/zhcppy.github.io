@@ -2,7 +2,7 @@
 
 # shell is funny
 
-#ABSTRACT MAC上安装应用
+# MacOS 开发环境
 
 set -e
 
@@ -18,6 +18,7 @@ which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/H
 which curl || brew install curl
 which jq   || brew install jq
 
+# use oh_my_zsh
 if [ $SHELL != '/bin/zsh' ]; then
     # change default shell
     chsh -s $(which zsh)
@@ -27,24 +28,8 @@ if [ $SHELL != '/bin/zsh' ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
-
 # import env rc
-cat << EOF >> ~/.zshrc
-# zhanghang
-export GOBIN=$HOME/go/bin
-export GOPATH=$HOME/go
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOBIN
-
-#export ANDROID_NDK=/usr/local/android-ndk-r16b
-#export ANDROID_HOME=$HOME/Library/Android/sdk
-#export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK
-
-# export PATH=$PATH:/usr/local/apache-maven-3.6.0/bin
-
-alias setproxy="export http_proxy=socks5://127.0.0.1:1086;export https_proxy=socks5://127.0.0.1:1086;"
-alias getip="curl ip.gs"
-EOF
+wget -qcO- https://raw.githubusercontent.com/zhcppy/zhcppy.github.io/master/config/.profile >> ~/.zshrc
 
 git config --global user.name zhanghang
 git config --global user.email zhcppy@icloud.com
@@ -62,7 +47,7 @@ EOF
 
 GUI_APP=(iterm2)
 
-for app in ${GUI_APP[@]} ; do
+for app in "${GUI_APP[@]}" ; do
     echo ${app}
 done
 
