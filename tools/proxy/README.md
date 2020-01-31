@@ -13,12 +13,6 @@ go-shadowsocks2 -c 'ss://AEAD_CHACHA20_POLY1305:zhanghang.666@[IP]:5488' \
     -tcptun :8053=8.8.8.8:53,:8054=8.8.4.4:53 -verbose
 ```
 
-### ssh 代理
-
-```bash
-ssh -o ProxyCommand="nc -X 5 -x 127.0.0.1:1086 %h %p" ubuntu@server.ip
-```
-
 ### 命令行设置代理
 
 ```bash
@@ -30,7 +24,13 @@ export http_proxy=socks5://127.0.0.1:1086;https_proxy=socks5://127.0.0.1:1086
 unset ALL_PROXY http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
 ```
 
-### vpn
+### SSH 代理
+
+```bash
+ssh -o ProxyCommand="nc -X 5 -x 127.0.0.1:1086 %h %p" ubuntu@server.ip
+```
+
+### VPN
 
 https://github.com/hwdsl2/setup-ipsec-vpn
 https://hub.docker.com/r/hwdsl2/ipsec-vpn-server

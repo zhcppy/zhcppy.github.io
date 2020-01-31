@@ -1,9 +1,14 @@
+- Home
+    * [nodejs](guides/nodejs.md)
+    * [python](guides/python.md)
+    * [rust](guides/rust.md)
 - Unix
     * [shell](unix/shell/README.md)
     * [linux](unix/linux.md)
     * [mac](unix/macos.md)
     * [iptable](unix/iptable.md)
     * [vim](unix/vim.md)
+    * [monitoring](unix/monitoring.md)
 - Tools
     * [docker](tools/docker/README.md)
     * [nginx](tools/nginx/README.md)
@@ -11,9 +16,12 @@
     * [git](tools/git.md)
     * [mysql](tools/mysql.md)
     * [redis](tools/redis.md)
+    * [makefile](tools/makefile.md)
+- 学习
+    * [浮点数运算](learn/float.md)
+    * [布隆过滤器](learn/bloom-filter.md)
+    * [微服务之道](learn/micro-service.md)
 - 其他
-    * [浮点数运算](other/float.md)
-    * [布隆过滤器](other/bloom-filter.md)
-    * [微服务之道](other/micro-service.md)
-- 陈年往事
-    * [安卓](history/android/README.md)
+    * [安卓](other/android/README.md)
+    * [Hexo](other/hexo.md)
+- [**关于**](about.md)

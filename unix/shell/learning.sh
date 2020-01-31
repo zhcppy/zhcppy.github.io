@@ -70,8 +70,8 @@ users
 last
 
 # 显示历史执行过的命令
-# 清空 history -c
-history
+# 清空 other -c
+other
 
 # 显示行号
 cat -n file.name
