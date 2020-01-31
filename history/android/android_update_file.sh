@@ -2,7 +2,7 @@
 
 # shell is funny
 
-# 通过adb shell更新Android应该外部依赖文件
+# 通过adb更新Android应用外部依赖文件
 
 set -o nounset
 set -o errexit

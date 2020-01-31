@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>zhcppy</title>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta charset="UTF-8">
-    <title>zhcppy</title>
+    <meta name="keywords" content="zhcppy,golang,blockchain,blog,github,zhanghang">
+    <meta name="description" content="A strange programmer life.">
     <link rel="icon" href="https://docsify.js.org/_media/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@latest/themes/vue.css">
 </head>
 <body>
-<div id="app">Loading...</div>
+<div id="app">Loading ...</div>
 <script>
     window.$docsify = {
         el: '#app', //初始化时挂载的DOM元素
@@ -29,7 +31,7 @@
         themeColor: '#42b983', //主题颜色
         noEmoji: false, //禁用表情符号
         mergeNavbar: true, //小屏幕上合并导航栏
-        formatUpdated: '{YYYY} {MM}/{DD} {HH}:{mm}:{ss}.{fff}', //通过{docsify-updated }变量显示文件更新日期
+        formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}', //通过{docsify-updated}变量显示文件更新日期
         externalLinkTarget: '_blank', //在标记外打开外部链接 '_self'
         routerMode: 'hash', // 路由模式'history'
         ext: '.md', // 请求文件扩展名
@@ -38,22 +40,24 @@
             '/.*/_sidebar.md': '/_sidebar.md'
         },
         search: { //搜索
+            namespace: 'zhcppy',
             placeholder: 'Search', //占位符
             noData: 'No Results!',
             depth: 2, //Headline depth, 1 - 6
+            paths: 'auto',
             hideOtherSidebarContent: false, //是否隐藏其他侧边栏内容
-            namespace: 'zhcppy',
         },
     }
 </script>
 <script src="plugins.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/search.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-go.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-nginx.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 </body>
 </html>

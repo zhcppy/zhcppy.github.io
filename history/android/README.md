@@ -1,6 +1,16 @@
 # Android
 
-## 关于Android中的转场动画
+## 构建APK脚本
+
+[android_build_apk](android_build_apk.sh ':include :type=code bash')
+
+## 通过adb更新应用外部依赖
+
+[android_update_file](android_update_file.sh ':include :type=code bash')
+
+## 转场动画
+
+> **相关项目[imemory](https://github.com/zhcppy/imemory)**
 
 转场动画即在Activity之间切换时执行的动画，是为了提高用户体验的整体美感
 
@@ -112,5 +122,3 @@ makeSceneTransitionAnimation方法其实还可以传递参数，不信你安装C
 &emsp;&emsp;上面的mMyLifeFragment、mFindfragment、mMessageFragment这三个Fragment是我要在Activity中显示的，addOrShowFragment方法就是用来向FragmentManager添加Fragment或显示FragmentManager里面的Fragment，里面传递的参数就是要显示的是第一个Fragment。
 
 这样实现了即使Activity重建也不会影响显示了。
-
-**相关项目[imemory](https://github.com/zhcppy/imemory)**

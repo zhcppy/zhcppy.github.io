@@ -1,20 +1,19 @@
-* [Home](README.md)
-* [Unix](unix/README.md)
+- Unix
     * [shell](unix/shell/README.md)
     * [linux](unix/linux.md)
     * [mac](unix/macos.md)
     * [iptable](unix/iptable.md)
     * [vim](unix/vim.md)
-* [Tools](tools/README.md)
+- Tools
+    * [docker](tools/docker/README.md)
     * [nginx](tools/nginx/README.md)
     * [proxy](tools/proxy/README.md)
     * [git](tools/git.md)
     * [mysql](tools/mysql.md)
     * [redis](tools/redis.md)
-* [Docker](docker/README.md)
-* [其他](other/README.md)
+- 其他
     * [浮点数运算](other/float.md)
     * [布隆过滤器](other/bloom-filter.md)
     * [微服务之道](other/micro-service.md)
-* [陈年往事](history/README.md)
+- 陈年往事
     * [安卓](history/android/README.md)

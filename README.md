@@ -1,8 +1,9 @@
 # zhcppy blog
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://github.com/zhcppy/zhcppy.github.io/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/zhcppy/zhcppy.github.io/blob/master/LICENSE)
+[![author](https://img.shields.io/badge/Author-zhcppy-brightgreen)](https://github.com/zhcppy)
 
-!> **Time** is money, my friend!
+> **Time** is money, my friend!
 
 - [x] 2013.09.10    大学
 - [x] 2015.00.00    经历

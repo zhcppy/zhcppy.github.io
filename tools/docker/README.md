@@ -38,7 +38,7 @@ wget -cqO- https://raw.githubusercontent.com/zhcppy/zhcppy.github.io/master/dock
 
 **docker安装脚本：**
 
-[](install_docker.sh ':include :type=code bash')
+[install_docker](install_docker.sh ':include :type=code bash')
 
 ## Docker Command TODO
 
