@@ -1,9 +1,10 @@
 - Home
+    * [golang](guides/golang.md)
     * [nodejs](guides/nodejs.md)
     * [python](guides/python.md)
     * [rust](guides/rust.md)
 - Unix
-    * [shell](unix/shell/README.md)
+    * [shell](unix/shell.md)
     * [linux](unix/linux.md)
     * [mac](unix/macos.md)
     * [iptable](unix/iptable.md)
