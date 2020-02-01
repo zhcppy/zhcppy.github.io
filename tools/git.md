@@ -2,7 +2,7 @@
 
 ## git命令使用
 
-### 强制pull
+* 强制pull
 
 ```bash
 git fetch --all 
@@ -10,14 +10,14 @@ git reset --hard origin/master
 git pull
 ```
 
-### 回滚
+* 回滚
 
 ```bash
 git reset --hard #<commit_id>
 git push origin HEAD --force
 ```
 
-### 本地提交后，git pull 拉到新的提交（导致git分叉）
+* 本地提交后，git pull 拉到新的提交（导致git分叉）
 
 ```bash
 git branch xx
@@ -31,26 +31,26 @@ git push
 git branch -D xx
 ```
 
-### 合并提交
+* 合并提交
 
 ```bash
 git rebase -i [startpoint] [endpoint] #([startpoint] [endpoint]则指定了一个编辑区间)
 ```
     
-### 修改commit msg
+* 修改commit msg
 
 ```bash
 git commit --amend
 ```
 
-### 修改远端仓库
+* 修改远端仓库
 
 ```bash
 git remote rm origin
 git remote add origin git@github.com:zhcppy/zhcppy.github.io.git
 ```    
 
-### git pull 免密码
+* git pull 免密码
 
 * 执行下面命令，再次输入密码后，以后将不再需要密码
 * 注意：这里的用户名和密码都将以明文的方式默认保存在用户目录下的 .git-credentials 文件中，如果需要恢复，删除该文件即可

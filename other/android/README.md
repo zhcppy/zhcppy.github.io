@@ -14,7 +14,7 @@
 
 转场动画即在Activity之间切换时执行的动画，是为了提高用户体验的整体美感
 
-### 简单转场动画
+* 简单转场动画
 
 启动Activity的方法
 
@@ -38,7 +38,7 @@
 
 这样最简单的转场动画就实现了
 
-### 炫酷转场动画
+* 炫酷转场动画
 
 要想实现更加炫酷的转场动画就需要在启动下一个Activity之前做更多的准备了
 
@@ -59,13 +59,13 @@ makeSceneTransitionAnimation方法其实还可以传递参数，不信你安装C
 
 更多炫酷的动画就是要巧妙的设计共享元素这个参数了
 
-### 坑(问题)
+* 坑(问题)
 
 &emsp;&emsp;在使用了转场动画去启动下一个Activity后，执行finish()方法关闭Activity回退时，发现Activity是退回来了，但是屏幕始终都无法点击（当时我还以为我手机坏了呢），手机上的实体键和虚拟键都还能用。后来我又发现使用手机上的虚拟键回退Activity时，屏幕是能点击，然后我就研究了下onBackPressed()这个方法，因为点击手机上的虚拟键时是调用这个方法结束Activity的，在onBackPressed()方法里执行了finishAfterTransition()这样一个方法，我看到这个方法的名字就明白了，大概就是说在执行完转场后finish嘛，所以在使用转场动画的方启动Activity时手动结束Activity要使用finishAfterTransition()。
 
 尽管finishAfterTransition()最后还是调用了finish()方法。毕竟在执行之前做了判断啊
 
-### android中Activity重建后Fragment重复创建
+* android中Activity重建后Fragment重复创建
 
 今天写项目遇到一个问题，就是一个Activity里面有多个Fragment需要管理，当屏幕旋转时多个Fragment会出现重叠的现象，原因是因为旋转屏幕时Activity会重建，造成Fragment多次创建产生重叠。
 

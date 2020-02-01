@@ -1,4 +1,4 @@
-## Linux
+# Linux
 
 ### 动态主机配置协议（DHCP）
 

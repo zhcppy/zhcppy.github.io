@@ -1,8 +1,10 @@
 - Home
     * [golang](guides/golang.md)
     * [nodejs](guides/nodejs.md)
+    * [javascript](guides/javascript.md)
     * [python](guides/python.md)
     * [rust](guides/rust.md)
+    * [frontend](guides/frontend.md)
 - Unix
     * [shell](unix/shell.md)
     * [linux](unix/linux.md)
@@ -19,11 +21,15 @@
     * [mysql](tools/mysql.md)
     * [redis](tools/redis.md)
     * [makefile](tools/makefile.md)
-- 学习
+- Learn
     * [浮点数运算](learn/float.md)
     * [布隆过滤器](learn/bloom-filter.md)
     * [微服务之道](learn/micro-service.md)
-- 其他
-    * [安卓](other/android/README.md)
+    * [英语](learn/english.md)
+- Other
+    * [WebRTC](other/webrtc.md)
+    * [BigData](other/bigdata.md)
+    * [Android](other/android/README.md)
     * [Hexo](other/hexo.md)
-- [**关于**](about.md)
+    * [Ideal](other/ideal.md)
+- [About](about.md)
