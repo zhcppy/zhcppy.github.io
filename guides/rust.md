@@ -5,11 +5,12 @@
 * Rust的丰富类型系统和所有权模型保证了内存安全性和线程安全性 - 使您能够在编译时消除许多类错误
 * Rust拥有出色的文档，友好的编译器和有用的错误消息，以及一流的工具-集成的包管理器和构建工具，具有自动完成的类型检查的智能多编辑器支持，自动格式化程序等。
 
-Rustup:Rust安装器和版本管理工具
+Rustup: Rust安装器和版本管理工具
 
 ```bash
 curl https://sh.rustup.rs -sSf | sh
 ```
 
 用 `rustup component add rustfmt` 安装代码格式化工具 Rustfmt;
+
 用 `rustup component add clippy` 安装 lint 工具 Clippy。

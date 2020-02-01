@@ -2,7 +2,7 @@
 
 事件驱动、非阻塞式 I/O
 
-## nodejs 安装
+## 安装
 
 * MAC 安装 nodejs
 
@@ -25,7 +25,7 @@ curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-## nvm管理 node.js 版本
+* nvm 管理 node.js 版本
 
 https://github.com/nvm-sh/nvm
 
@@ -33,7 +33,7 @@ https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
 ```
 
-## npm node.js包管理工具
+## npm 包管理工具
 
 ```bash
 # npm是随同node.js一起安装的，设置npm国内淘宝代理镜像
@@ -41,9 +41,14 @@ npm config set registry https://registry.npm.taobao.org
 
 # 修改npm全局包目录权限
 sudo chown -R ${USER} /usr/local/lib/node_modules
+
+# 命令行http服务器 (https://www.npmjs.com/package/http-server)
+npm install http-server -g
 ```
 
-## 非阻塞式读取文件
+## 实战
+
+* 非阻塞式读取文件
 
 ```js
 let fs = require("fs");
@@ -58,7 +63,8 @@ fs.readFile(guides, function(err, data){//回调
 console.log("END");
 ```
 
-## HtmlToPDF
+* HtmlToPDF
+
 ```js
 let fs = require('fs');
 let pdf = require('html-pdf');
@@ -71,17 +77,17 @@ console.log(res); // { filename: '/app/businesscard.pdf' }
 });
 ```
 
-## MarkdownToPDF
+* MarkdownToPDF
 
 ```js
 let markdownpdf = require("markdown-pdf");
 let fs = require("fs");
-fs.createReadStream("/home/zhanghang/cppy/cv.md")
+fs.createReadStream("./nodejs.md")
 .pipe(markdownpdf())
-.pipe(fs.createWriteStream("/home/zhanghang/zhanghang.pdf"))
+.pipe(fs.createWriteStream("./nodejs.pdf"))
 ```
 
-## 正则脱敏
+* 正则脱敏
 
 ```js
 let reg = /^(\d{4})(\d*)(\d{4})$/;
@@ -92,7 +98,7 @@ str = str.replace(reg, function(a, b, c, d) {
 console.log(str);
 ```
 
-## 阿里短信服务API
+* 阿里短信服务API
 
 * 新建短信签名
 
@@ -147,4 +153,33 @@ req.on('error', function(e){//请求出现错误
 });
 
 req.end();
+```
+
+* 木偶 puppeteer
+
+```js
+const puppeteer = require('puppeteer');
+
+// 浏览器截图
+(async () => {
+    const browser = await puppeteer.launch({
+        headless: false,
+        // args: ['--proxy-server=socks5://127.0.0.1:1086'],
+    });
+    const page = await browser.newPage();
+    await page.goto('https://baidu.com');
+    await page.screenshot({path: 'baidu.png'});
+
+    await browser.close();
+})();
+
+// 导出PDF
+// (async () => {
+//     const browser = await puppeteer.launch();
+//     const page = await browser.newPage();
+//     await page.goto('https://baidu.com', {waitUntil: 'body'});
+//     await page.pdf({path: 'baidu.pdf', format: 'A4'});
+//
+//     await browser.close();
+// })();
 ```

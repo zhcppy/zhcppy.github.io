@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  hx_name:
+    container_name: hx_name
+    image: zhcppy:5000/hx_name:1.0
+    ports:
+      - "5005:5005"
+    environment:
+      - HX_ENV=test
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - zhcppy_net
+networks:
+  zhcppy_net:
+    external: true
+    driver: bridge

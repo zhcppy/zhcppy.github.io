@@ -10,11 +10,13 @@ Docker Client -- Docker 客户端
 
 ## Docker Machine
 
-Docker Machine是一个工具，可让在虚拟主机上安装Docker Engine，并使用docker-machine命令管理主机
+Docker Machine是一个Docker工具，可让在虚拟主机上安装Docker Engine，并使用docker-machine命令管理主机
 
 * 在Mac或Windows上安装并运行Docker
 * 配置和管理多个远程Docker主机
 * 提供Swarm集群
+
+[更多 Machine](/tools/docker/machine/README.md)
 
 ## Docker 与 VM 区别
 

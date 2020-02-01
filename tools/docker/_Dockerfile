@@ -1,0 +1,15 @@
+FROM alpine:latest
+
+RUN	apk add --no-cache \
+	bash ca-certificates curl gcc git \
+	gnupg jq make musl-dev \
+	libseccomp-dev linux-headers shadow \
+	zsh && chsh -s /bin/zsh || true
+
+WORKDIR /root
+
+COPY ./.zshrc /root/.zshrc
+
+ENV SHELL /usr/bin/zsh
+
+ENTRYPOINT ["/bin/zsh"]

@@ -1,0 +1,21 @@
+# Build Geth in a stock Go builder container
+FROM golang:latest as builder-proxy
+
+WORKDIR /go/src/golang.org/x
+
+RUN git clone -v --depth 1 https://github.com/golang/crypto.git
+RUN git clone -v --depth 1 https://github.com/golang/sys.git
+RUN GOOS=linux GOARCH=386 go get -v github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-local
+#RUN ls /go/bin/linux_386
+#RUN GOOS=linux GOARCH=amd64 go get -v github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-local
+#RUN ls /go/bin/linux_amd64
+
+FROM alpine:latest
+
+COPY --from=builder-proxy /go/bin/linux_386/shadowsocks-local /usr/local/bin/
+
+EXPOSE 1086
+
+ENTRYPOINT ["shadowsocks-local", "-s", "13.229.204.253", "-p", "8388", "-k", "functionX.", "-m", "aes-256-cfb", "-t", "300", "-b", "127.0.0.1", "-l", "1086"]
+
+# docker build -t proxy-ss .

@@ -45,21 +45,21 @@ python3 -m zipfile -c xx.zip aa.txt bb.txt
 
 ## python3 lib
 
-阻塞式http请求库 : pip3 install requests
+```
+# 阻塞式http请求库
+pip3 install requests
+# 驱动浏览器执行库
+pip3 install selenium
+# 异步Web服务库
+pip3 install aiohttp
+# html解析库
+pip3 install lxml
 
-驱动浏览器执行库 : pip3 install selenium
-
-异步Web服务库 : pip3 install aiohttp
-
-html解析库 : pip3 install lxml
-
-ocr识别库 : sudo apt-get install tesseract-ocr libtesseract-dev libleptonica-dev  
-添加ocr支持的语言
-
-```bash
+# ocr识别库
+sudo apt-get install tesseract-ocr libtesseract-dev libleptonica-dev  
+# 添加ocr支持的语言
 git clone https://github.com/tesseract-ocr/tessdata.git
 sudo mv tessdata/* /usr/share/tesseract-ocr/tessdata
-
 pip3 install tesserocr pillow
 
 #* 安装 ChromeDriver
