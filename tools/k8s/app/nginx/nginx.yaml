@@ -1,0 +1,39 @@
+# ------------------- Service ------------------- #
+apiVersion: v1
+kind: Service
+metadata:
+  name: zh-nginx-svc
+  labels:
+    app: nginx
+    tier: backend
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+  selector:
+    app: nginx
+
+---
+
+# ------------------- Deployment ------------------- #
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zh-nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: zhcppy/zg_nginx:1.0
+          ports:
+            - containerPort: 80

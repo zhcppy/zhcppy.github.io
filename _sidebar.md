@@ -12,6 +12,7 @@
     * [monitoring](unix/monitoring.md)
 - Tools
     * [docker](tools/docker/README.md)
+    * [k8s](tools/k8s/README.md)
     * [nginx](tools/nginx/README.md)
     * [proxy](tools/proxy/README.md)
     * [git](tools/git.md)

@@ -1,0 +1,21 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"zh-app",
+      "labels":{
+         "app":"zh-app"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":8080,
+          "targetPort":"zh"
+        }
+      ],
+      "selector":{
+         "app":"zh-app"
+      }
+   }
+}

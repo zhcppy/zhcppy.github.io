@@ -1,0 +1,47 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"default-app",
+      "labels":{
+         "app":"default-app"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "app":"default-app"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"default-app"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"default-app",
+                  "image":"zhcppy/default-app:1.0",
+                  "imagePullPolicy": "IfNotPresent",
+                  "ports":[
+                     {
+                        "name":"zhcppy",
+                        "containerPort":8080
+                     }
+                  ],
+                  "env": [
+                     {"name": "ZH_ENV", "value": "prod"}
+                  ],
+                  "volumeMounts": [
+                    {"name": "zh-log", "mountPath": "/var/log/zh"}
+                 ]
+               }
+            ],
+            "volumes": [
+                {"name": "zh-log", "persistentVolumeClaim": {"claimName": "zh-log"}}
+             ]
+         }
+      }
+   }
+}
