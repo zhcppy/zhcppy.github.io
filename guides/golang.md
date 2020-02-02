@@ -10,6 +10,16 @@ http://wiki.jikexueyuan.com/list/go/
 
 ## 实战
 
+* 开始一个项目
+
+项目结构规范 https://github.com/golang-standards/project-layout
+
+[脚手架](/guides/go_scaffold.sh ':ignore')
+
+```bash
+wget -qcO- https://raw.githubusercontent.com/zhcppy/zhcppy.github.io/master/guides/go_scaffold.sh | bash
+```
+
 * 读取文件
 
 ```go
@@ -134,15 +144,3 @@ GOPROXY=https://goproxy.io GO111MODULE=on go mod tidy
 
 
 编译生成aar文件，将aar添加为android项目lib[方式](https://developer.android.com/studio/projects/android-library)
-
-## 脚手架
-
-* run
-
-```bash
-wget -qcO- https://raw.githubusercontent.com/zhcppy/zhcppy.github.io/master/guides/go_scaffold.sh | bash
-```
-
-* show
-
-[go-scaffold](go_scaffold.sh ':include :type=code bash')

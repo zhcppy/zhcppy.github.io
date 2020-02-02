@@ -1,5 +1,20 @@
 # Linux
 
+- `/boot`启动//内核驱动等
+- `/dev`硬件
+- `/etc`配置
+- `/home`用户数据
+- `/root`root 用户数据
+- `/lib` 库
+- `/mnt` 挂载
+- `/opt` 大型软件安装目录
+- `/proc` 内存实时信息
+- `/sbin` root 用户执行命令
+- `/bin` 用户执行命令
+- `/tmp` 临时目录
+- `/usr` 应用软件安装目录
+- `/var` log 等经常变化的信息
+
 ### 命令
 
 [更多 Command](/unix/command/README.md)

@@ -18,6 +18,8 @@
     * [Iptable](unix/iptable.md)
     * [Vim](unix/vim.md)
     * [Monitoring](unix/monitoring.md)
+    * [Linux Release](unix/release.md)
+    * [Tmux](unix/tmux.md)
 - Tools
     * [Docker](tools/docker/README.md)
     * [K8s](tools/k8s/README.md)
@@ -27,6 +29,7 @@
     * [Mysql](tools/mysql.md)
     * [Redis](tools/redis.md)
     * [Makefile](tools/makefile.md)
+    * [Jetbrains](tools/jetbrains/README.md)
 - Learn
     * [浮点数运算](learn/float.md)
     * [布隆过滤器](learn/bloom-filter.md)

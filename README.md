@@ -24,4 +24,5 @@
 - [ ] About markdown
 - [ ] Vim markdown
 - [ ] Machine learning
+- [ ] Jetbrains
 - [ ] 

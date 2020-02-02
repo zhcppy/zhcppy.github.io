@@ -33,9 +33,11 @@
         noEmoji: false, //禁用表情符号
         mergeNavbar: true, //小屏幕上合并导航栏
         formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}', //通过{docsify-updated}变量显示文件更新日期
-        externalLinkTarget: '_blank', //在标记外打开外部链接 '_self'
-        routerMode: 'hash', // 路由模式'history'
-        ext: '.md', // 请求文件扩展名
+        externalLinkTarget: '_blank', //外部链接打开方式 '_self'
+        cornerExternalLinkTarget: '_blank', //右上角外表连接打开方式 '_self'
+        externalLinkRel: 'noopener', //默认值'noopener'（无打开程序）阻止新打开的外部页面（当externalLinkTarget为时'_blank'）具有控制我们的页面的能力
+        routerMode: 'hash', //路由模式'history'
+        ext: '.md', //请求文件扩展名
         notFoundPage: false, //加载404页面
         alias: { //路由别名
             '/unix/command/_sidebar.md': '/unix/command/_sidebar.md',
