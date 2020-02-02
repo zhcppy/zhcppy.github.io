@@ -1,10 +1,8 @@
 # Linux
 
-### command
+### 命令
 
-https://lbb4511.top/linux
-
-[更多](command/README.md)
+[更多 Command](/unix/command/README.md)
 
 ### 动态主机配置协议（DHCP）
 

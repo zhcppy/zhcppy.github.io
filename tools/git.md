@@ -1,5 +1,7 @@
 # git常用技巧
 
+doc: https://git-scm.com/book/zh
+
 ## git命令使用
 
 ```bash

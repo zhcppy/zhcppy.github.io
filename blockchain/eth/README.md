@@ -165,3 +165,7 @@ Event:
 所以简单来说，Event 可用來：1. 取得 function 更新合约状态的返回值 2. 也可作为合约另外的存储空间。
 
 Event 的参数分为：有 `indexed`，和其他没有 `indexed` 的。有 `indexed` 的参数可以使用 filter，例如同一个 Event，我可以选择只监听从特定 address 发出来的交易。每笔 Log 的信息同样分为两个部分：Topics（长度最多为 4 的 array） 和 Data。有 `anonymous` 的参数会存储存在 Log 的 Topics，其他的存在 Data。
+
+##### ERC
+
+[更多 ERC](erc-standard.md)
