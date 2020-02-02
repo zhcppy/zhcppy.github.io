@@ -47,3 +47,33 @@ ws.send('{}');
 ws.close();
 ```
 
+* Console
+
+```
+// 断言并输出
+console.assert(false, "debug");
+// 统计代码被执行的次数
+console.count('count:');
+// 将DOM结点以DOM树的结构进行输出
+console.dir();
+// 统计时间
+console.time('test time:'); // 计时开始
+console.timeEnd('test time:'); // 计时结束
+// 查看CPU使用信息
+console.profile()
+console.profileEnd()
+// 堆栈跟踪相关的调试
+console.trace()
+// 输出表格
+console.table()
+// 监听函数执行
+monitor(function name)
+
+$ // 简单理解就是 document.querySelector 而已。
+$$ // 简单理解就是 document.querySelectorAll 而已。
+$_ // 是上一个表达式的值
+0-4 // 是最近5个Elements面板选中的DOM元素，待会会讲。
+dir // 其实就是 console.dir
+keys // 取对象的键名, 返回键名组成的数组
+values // 去对象的值, 返回值组成的数组
+```

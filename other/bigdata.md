@@ -6,6 +6,7 @@
 发布--订阅（pub -- sub）消息系统
 
 * 下载安装
+
 ```bash
 wget -c http://mirrors.tuna.tsinghua.edu.cn/apache/kafka/0.11.0.0/kafka_2.11-0.11.0.0.tgz
 
@@ -15,17 +16,17 @@ cd kafka_2.11-0.11.0.0
 ```
 
 * 启动服务器
-启动一个**ZooKeeper**服务器
-```bash
-bin/zookeeper-server-start.sh  config/zookeeper.properties
-```
 
-启动**kafka**服务器
 ```bash
+# 启动一个**ZooKeeper**服务器
+bin/zookeeper-server-start.sh  config/zookeeper.properties
+
+# 启动**kafka**服务器
 bin/kafka-server-start.sh config/server.properties
 ```
 
 * 创建话题(topics)
+
 ```bash
 bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
 
@@ -33,6 +34,7 @@ bin/kafka-topics.sh --list --zookeeper localhost:2181
 ```
 
 * 生产者发送消息(producer)
+
 ```bash
 bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
 
@@ -40,6 +42,7 @@ hello, My name is zhanghang
 ```
 
 * 启动消费者（consumer）
+
 ```bash
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 
@@ -166,8 +169,8 @@ reduce 结果汇总 “迭代汇总”
 - 再说一下spark的特点
 它最大的特点就是快了！！！
 官方给出的数据是：
-        如果数据由磁盘读取，速度是Hadoop MapReduce 的10倍以上
-        如果数据从内存中读取，速度可以高达100多倍
+    如果数据由磁盘读取，速度是Hadoop MapReduce 的10倍以上
+    如果数据从内存中读取，速度可以高达100多倍
 原因：
 是因为它基于内存计算，并采用了先进的DAG引擎进行优化，DAG 即 有向无环如图1，数据计算步骤根据依赖关系形成DAG图
 spark是易于使用的，它是采用Scala语言撰写的，它支持多种语言来使用它，包括java scala python R

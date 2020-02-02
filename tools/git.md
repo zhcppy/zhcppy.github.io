@@ -2,6 +2,84 @@
 
 ## git命令使用
 
+```bash
+# 切换到前一个分支
+git checkout -
+# 合并提交
+git rebase -i [startpoint] [endpoint] #([startpoint] [endpoint]则指定了一个编辑区间)
+# 修改commit msg
+git commit --amend
+# 直观显示修改内容
+git status -sb 
+# git查询提交信息
+git show :/fix
+# 终端内容着色
+git config --global color.ui true
+# 启用自动纠错功能, 在键入 `pul` 调用 `pull`命令
+git config --global help.autocorrect true
+```
+
+* 合并分支
+  
+输入命令:
+
+```bash
+git branch --merged
+```
+
+这会显示所有已经合并到你当前分支的分支列表。
+
+相反地：
+
+```bash
+git branch --no-merged
+```
+
+会显示所有还没有合并到你当前分支的分支列表。
+
+[_进一步了解 Git `branch` 命令._](http://git-scm.com/docs/git-branch)
+
+* 直观显示 git log 
+
+```bash
+git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+# 添加alias
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+
+git lg
+```
+
+* Stripspace 命令
+
+Git Stripspace 命令可以:
+
+- 去掉行尾空白符
+- 多个空行压缩成一行
+- 必要时在文件末尾增加一个空行
+
+使用此命令时必须传入一个文件，像这样：
+
+```bash
+git stripspace < README.md
+```
+[_进一步了解 Git `stripspace` 命令._](http://git-scm.com/docs/git-stripspace)
+
+* 提交空改动 :trollface:
+
+可以使用`--allow-empty`选项强制创建一个没有任何改动的提交：
+
+```bash
+git commit -m "v0.0.1" --allow-empty
+```
+
+这样做在如下几种情况下是有意义的：
+
+- 标记新的工作或一个新功能的开始。
+- 记录对项目的跟代码无关的改动。
+- 跟使用你仓库的其他人交流。
+- 作为仓库的第一次提交，因为第一次提交后不能被 rebase：`git commit -m "init repo" --allow-empty`.
+
 * 强制pull
 
 ```bash
@@ -29,18 +107,6 @@ git commit -am "cc"
 git pull
 git push
 git branch -D xx
-```
-
-* 合并提交
-
-```bash
-git rebase -i [startpoint] [endpoint] #([startpoint] [endpoint]则指定了一个编辑区间)
-```
-    
-* 修改commit msg
-
-```bash
-git commit --amend
 ```
 
 * 修改远端仓库

@@ -1,21 +1,19 @@
 
-I am from Chain, nice to meet yue, My Chinese name is Zhang Hang, My English name is Nick,
-
+I am from Chain, nice to meet yue, My Chinese name is Zhang Hang, My English name is Jack,
 I only know a little English, I need help, Can you help me. See you later. How much is this,
+Can I Have another one, Long time no see, Give me five.
 
-Can I Have another one, Long time no see, Give me five
+|  word  | 单词  |
+|  ----  | ----  |
+| enable | 使能够 |
+| dispatched | 派遣，发送 |
+| endpoint | 端点，终结点 |
+| deadline | 最后期限 |
+| finalize | 完成 |
 
-enable 使能够
-
-dispatched 派遣，发送
-
-endpoint 端点，终结点
-
-deadline 最后期限
-
-finalize 完成
-
-* 2019.07.18
+PS: zero one   two    three    four     five    six     seven     eight    nine 
+    ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen
+    {thousand 千} {million 百万}
 
 Hi！Greg，good afternoon！
 
@@ -35,10 +33,6 @@ A: I am from Hubei.
 
 Q: What is your phone number？
 A: My phone number is 13971597910.
-
-PS: zero one   two    three    four     five    six     seven     eight    nine 
-    ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen
-    {thousand 千} {million 百万}
     
 Q: How often do you go to work?
 A: Five day a week.
@@ -55,15 +49,12 @@ A: I want go to the Korea(韩国).
 Q: What do you think is the best restaurant?
 A: I think is fast food, Because It is so cheap.
 
-
 I need help, Can you help me
 See you later
 How much is this
 Can I have another one 我能再要一个么
 Give me five  击掌
 Long time no see 好久不见
-
-* 
 
 What can you do with a computer?
 

@@ -38,4 +38,3 @@
     * [Android](other/android/README.md)
     * [Hexo](other/hexo.md)
     * [Ideal](other/ideal.md)
-- [About](about.md)

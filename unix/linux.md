@@ -1,5 +1,11 @@
 # Linux
 
+### command
+
+https://lbb4511.top/linux
+
+[更多](command/README.md)
+
 ### 动态主机配置协议（DHCP）
 
 子网掩码是用来判断任意两台计算机的IP地址是否属于同一子网络的重要根据
