@@ -41,3 +41,10 @@ docker-compose up -d
 # client
 ./client.sh
 ```
+
+### OpenVPN install 
+
+```bash
+wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh
+```
+[see more](https://github.com/Nyr/openvpn-install)

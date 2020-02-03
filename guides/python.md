@@ -79,8 +79,9 @@ pip3 install tesserocr pillow
 
 爬取[格言网](https://www.geyanw.com)首页数据所有数据，并写入文件
 
-[](motto.py ':include :type=code python')
+[Source code](https://github.com/zhcppy/python/blob/master/crawler/motto/__init__.py)
 
 ## MongoDB
 
-[](mongo.py ':include :type=code python')
+[Source code](https://github.com/zhcppy/python/blob/master/mongodb/mongodb.py)
+

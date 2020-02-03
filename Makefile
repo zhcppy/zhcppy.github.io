@@ -1,8 +1,9 @@
 #!/usr/bin/make -f
 
+.PHONY: push preview commit http
+
 TIME_NOW=$$(date +"%Y-%m-%d %H:%M.%S")
 
-.PHONY: push
 msg=$$(sed -n "$$(($$RANDOM%6521))p" .motto)
 push:
 	@git add .
@@ -14,3 +15,6 @@ preview:
 
 commit:
 	@read -p "commit: " && git commit -am "$$REPLY"
+
+http:
+	@http-server . -p 4000 || echo "Please Run 'npm install http-server -g' to Install"
