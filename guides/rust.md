@@ -23,3 +23,15 @@ rustup doc
 ### Cargo
 
 Cargo 负责三个工作：构建代码，下载代码依赖的库并编译这些库。
+
+* cargo 配置国内镜像
+
+在`$HOME/.cargo/config`文件中添加如下配置
+
+```config
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = "ustc"
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+```
