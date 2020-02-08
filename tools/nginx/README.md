@@ -1,5 +1,31 @@
 # nginx
 
+### Ubuntu Install
+
+https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages
+
+The available NGINX Ubuntu release support is listed at this distribution page. For a mapping of Ubuntu versions to release names, please visit the Official Ubuntu Releases page.
+
+Append the appropriate stanza to /etc/apt/sources.list. If there is concern about persistence of repository additions (i.e. DigitalOcean Droplets), the appropriate stanza may instead be added to a different list file under /etc/apt/sources.list.d/, such as /etc/apt/sources.list.d/nginx.list.
+
+#### Replace $release with your corresponding Ubuntu release.
+deb http://nginx.org/packages/ubuntu/ $release nginx
+deb-src http://nginx.org/packages/ubuntu/ $release nginx
+e.g. Ubuntu 16.04 (Xenial):
+
+deb http://nginx.org/packages/ubuntu/ xenial nginx
+deb-src http://nginx.org/packages/ubuntu/ xenial nginx
+To install the packages, execute in your shell:
+
+sudo apt-get update
+sudo apt-get install nginx
+If a W: GPG error: http://nginx.org/packages/ubuntu xenial Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY $key is encountered during the NGINX repository update, execute the following:
+
+#### Replace $key with the corresponding $key from your GPG error.
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
+sudo apt-get update
+sudo apt-get install nginx
+
 ##### 来自网络上的一个好介绍
 
 > - 传统上基于进程或线程模型架构的 Web 服务通过每进程或每线程处理并发连接请求，这势必会在网络和 I/O 操作时产生阻塞，其另一个必然结果则是对内存或 CPU 的利用率低下。生成一个新的进程/线程需要事先备好其运行时环境，这包括为其分配堆内存和栈内存，以及为其创建新的执行上下文等。这些操作都需要占用 CPU，而且过多的进程/线程还会带来线程抖动或频繁的上下文切换，系统性能也会由此进一步下降。
@@ -188,6 +214,25 @@ limit_conn slimits 5;
 
 ### SSL证书生成
 
+```bash
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out domain.crt
+```
+
+* openssl：这是用于创建和管理OpenSSL证书、密钥和其他文件的基本命令工具。
+* req：此子命令指定我们要使用X.509证书签名请求管理。“X.509”是SSL和TLS为其密钥和证书管理所遵循的公钥基础结构标准。我们想要创建一个新的X.509证书，所以我们使用这个子命令。
+* -x509：这通过告诉实用程序我们要创建自签名证书而不是生成证书签名请求来进一步修改上一个子命令。
+* -nodes：这告诉OpenSSL跳过用密码保护我们的证书的选项。当服务器启动时，我们需要Nginx能够在没有用户干预的情况下读取文件。密码短语会阻止这种情况发生，因为我们必须在每次重启后输入密码。
+* -days 365：此选项设置证书的有效时间长度。我们在这里设置了一年。
+* -newkey rsa：2048：这指定我们要同时生成新证书和新密钥。我们没有创建在上一步中签署证书所需的密钥，因此我们需要将其与证书一起创建。该rsa:2048部分告诉它制作一个2048位长的RSA密钥。
+* -keyout：这一行告诉OpenSSL在哪里放置我们正在创建的生成的私钥文件。
+* -out：这告诉OpenSSL在哪里放置我们正在创建的证书。
+
+* ubuntu 添加自签名证书
+
+```bash
+sudo cp /etc/nginx/conf.d/domain.crt /usr/local/share/ca-certificates/
+sudo update-ca-certificates
+```
 
 ### Config Demo
 
