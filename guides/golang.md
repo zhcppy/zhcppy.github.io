@@ -94,7 +94,22 @@ go tool link --help
 go build -ldflags "-s -w"
 ```
 
-* TLS
+#### TLS
+
+X.509 秘密学里公钥证书的格式标准，被应用于许多网络协议，如TLS
+包括公钥、标示、签名
+
+TLS（Transport Layer Security） 传输层安全性 在计算机网络中提供安全性的加密协议 保证隐私和数据完整性
+
+制作本地可信赖的开发证书 https://github.com/FiloSottile/mkcert
+
+Please don't worry
+
+1.生成服务器端的私钥  openssl genrsa -out server.key 2048
+2.生成服务器端的证书  openssl req -new -x509 -key server.key -out server.crt -days 3650
+Country Name | State or Province Name | Locality Name | Organization | Organizational Unit Name | Common Name | Email Address
+
+//go:generate openssl req -new -nodes -x509 -out server.crt -keyout server.key -days 3650 -subj "/C=CN/ST=GZ/L=SZ/O=zhcppy/OU=IT/CN=localhost/EA=zhcppy@qq.com"
 
 ##### 奇技淫巧
 

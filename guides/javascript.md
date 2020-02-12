@@ -47,6 +47,23 @@ ws.send('{}');
 ws.close();
 ```
 
+```js
+let ws = new WebSocket("wss://echo.websocket.org");
+
+ws.onopen = function(evt) { 
+  console.log("Connection open ...", evt); 
+};
+
+ws.onmessage = function(res) {
+  console.log( "Received Message: " + res.data);
+  ws.close();
+};
+
+ws.onclose = function(err) {
+  console.log("Connection closed.");
+};
+```
+
 * Console
 
 ```
