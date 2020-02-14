@@ -4,7 +4,8 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 #export GO111MODULE=on
 #export GOPRIVATE=
-#export GOPROXY=https://goproxy.io
+export GOPROXY=https://goproxy.io,direct
+export GOSUMDB=sum.golang.google.cn
 export PATH=$PATH:$GOBIN:$GOROOT/bin
 
 # Rust

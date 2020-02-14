@@ -114,12 +114,14 @@ systemd-analyze blame
 systemd-analyze critical-chain
 ```
 
-```shell script
+```bash
 #!/usr/bin/env bash
 
 # shell is funny
 
 #  ha ha ha
+
+ruby -run -e httpd . -p 1337
 
 uptime
 iftop

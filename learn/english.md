@@ -165,3 +165,16 @@ How much is ?
 
 32.The hardest thing is to take less when you can get more 
 世上最难的事，莫过于能取千金，却没索半厘
+
+####
+
+I know you are out there, I can feel you now, 
+I know the true are feel, you are afraid of us,
+you are afraid of change, I don't know the future,
+I didn't come here to tell you how this is going the end,
+I came here to tell you how it is going to begin.
+I'll hang hu this phone, and then I'll show these people what you don't want them to see.
+I'm going to show them a world, without you, 
+a world without rules and controls, without borders or boundaries,
+a world where anything is possible,where we go from there,
+is a choice I leave to you

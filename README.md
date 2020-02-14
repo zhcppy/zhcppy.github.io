@@ -18,9 +18,8 @@
 
 #### TODO LIST
 
-- [ ] Nginx SSL 证书生成
+- [x] Nginx SSL 证书生成
 - [ ] 搭建n8n使用工作流
-- [ ] About markdown
 - [ ] Vim markdown
 - [ ] Machine learning
 - [ ] Jetbrains

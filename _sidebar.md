@@ -34,6 +34,7 @@
     * [浮点数运算](learn/float.md)
     * [布隆过滤器](learn/bloom-filter.md)
     * [微服务之道](learn/micro-service.md)
+    * [笔记](learn/notes.md)
     * [英语](learn/english.md)
 - Other
     * [WebRTC](other/webrtc.md)

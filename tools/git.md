@@ -130,6 +130,14 @@ git config --local credential.helper --timeout 2019 cache
 git pull
 ```
 
+* 修改历史 commit 和 auther 信息
+
+```base
+git rebase -i HEAD~6
+git commit --amend
+git commit --amend --author "zhanghang <zhcppy@icloud.com>"
+git rebase --continue
+```
 
 ## 生成sshkey
 
