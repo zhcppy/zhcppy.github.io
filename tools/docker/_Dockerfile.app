@@ -6,7 +6,6 @@ WORKDIR /go/src/project-name
 RUN go build -o /go/bin/project-name
 
 FROM alpine:latest
-MAINTAINER zhanghang
 LABEL maintainer="Zhang Hang <zhcppy@icloud.com>"
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone

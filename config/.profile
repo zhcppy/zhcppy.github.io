@@ -2,7 +2,7 @@
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-#export GO111MODULE=on
+export GO111MODULE=auto
 #export GOPRIVATE=
 export GOPROXY=https://goproxy.io,direct
 export GOSUMDB=sum.golang.google.cn
