@@ -164,3 +164,5 @@ git config --global core.quotepath false
 ```bash
 ssh -T git@github.com
 ```
+
+GIT_TERMINAL_PROMPT=1 go get -v 

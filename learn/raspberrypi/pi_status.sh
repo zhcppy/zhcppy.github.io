@@ -12,24 +12,26 @@ echo "显示由板载温度传感器测量的SoC温度:"
 vcgencmd measure_temp
 
 echo "显示指定时钟的当前频率:"
-vcgencmd measure_clock arm
-vcgencmd measure_clock core
-vcgencmd measure_clock H264
-vcgencmd measure_clock isp
-vcgencmd measure_clock v3d
-vcgencmd measure_clock uart
-vcgencmd measure_clock pwm
-vcgencmd measure_clock emmc
-vcgencmd measure_clock pixel
-vcgencmd measure_clock vec
-vcgencmd measure_clock hdmi
-vcgencmd measure_clock dpi
+printf "%s\t%s\t\n" \
+"ARM"   $(vcgencmd measure_clock arm)   \
+"Core"  $(vcgencmd measure_clock core)  \
+"H264"  $(vcgencmd measure_clock H264)  \
+"ISP"   $(vcgencmd measure_clock isp)   \
+"V3D"   $(vcgencmd measure_clock v3d)   \
+"UART"  $(vcgencmd measure_clock uart)  \
+"PWM"   $(vcgencmd measure_clock pwm)   \
+"eMMC"  $(vcgencmd measure_clock emmc)  \
+"Pixel" $(vcgencmd measure_clock pixel) \
+"VEC"   $(vcgencmd measure_clock vec)   \
+"HDMI"  $(vcgencmd measure_clock hdmi)  \
+"DPI"   $(vcgencmd measure_clock dpi)
 
 echo "显示特定块使用的当前电压:"
-vcgencmd measure_volts core
-vcgencmd measure_volts sdram_c
-vcgencmd measure_volts sdram_i
-vcgencmd measure_volts sdram_p
+printf "%s\t%s\t\n" \
+"core"    $(vcgencmd measure_volts core)    \
+"sdram_c" $(vcgencmd measure_volts sdram_c) \
+"sdram_i" $(vcgencmd measure_volts sdram_i) \
+"sdram_p" $(vcgencmd measure_volts sdram_p)
 
 echo "显示分配给GPU的内存量:"
 vcgencmd get_mem gpu
@@ -45,3 +47,7 @@ vcgencmd display_power
 
 echo "列出可用的显示ID:"
 tvservice -l
+
+echo "显示USB设备排列方式及其分配的速度:"
+lsusb -t
+
