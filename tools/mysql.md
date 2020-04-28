@@ -50,16 +50,21 @@ mysqldump -uroot -proot1234 --databases btc_prod > btc_prod.sql
 ## 命令使用
 
 ```sql
-# 创建数据库
-create database test_db;
 # 显示所有数据库
 show databases;
+# 创建数据库
+create database test_db;
 # 选择数据库
 use test_db;
+# 显示所有表
+show tables;
 # 创建表
 create table test
 (id int unsigned not null auto_increment primary key,
 name varchar not null);
+# 显示表结构
+desc <表名>
+show create table <表名>
 # 向表中插入数据
 insert [into] [ignore] 表名 [(列名1, 列名2, 列名3, ...)] values (值1, 值2, 值3, ...);
 # 查询表中的数据
