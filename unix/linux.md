@@ -19,6 +19,17 @@
 
 [更多 Command](/unix/command/README.md)
 
+### too many open files
+
+```bash
+# 
+ulimit -a
+# 临时设置进程打开文件的最大限制
+ulimit -S -n 2048
+# 查看某进程打开的文件
+lsof -p <pid> | wc -l
+```
+
 ### 动态主机配置协议（DHCP）
 
 子网掩码是用来判断任意两台计算机的IP地址是否属于同一子网络的重要根据
