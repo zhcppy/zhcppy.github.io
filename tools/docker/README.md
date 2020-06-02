@@ -102,3 +102,8 @@ sudo usermod -aG docker ${USER}
 ```bash
 docker inspect -f '{{.State.Pid}} {{.Id}}' $(docker ps -a -q)
 ```
+
+* docker查看磁盘占用
+```bash
+docker system df --verbose
+```

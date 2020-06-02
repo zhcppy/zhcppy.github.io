@@ -15,3 +15,24 @@ brew services start mongodb-community@4.2
 mongod --config /usr/local/etc/mongod.conf --fork
 ```
 
+* Ubuntu install 
+
+```bash
+lsb_release -dc
+
+ps --no-headers -o comm 1
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu
+
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+
+# Ubuntu 16.04 (Xenial)
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+# Ubuntu 18.04 (Bionic)
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+```
+

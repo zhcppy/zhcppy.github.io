@@ -8,6 +8,13 @@ https://yourbasic.org/golang/
 
 http://wiki.jikexueyuan.com/list/go/
 
+## Ubuntu 安装最新版golang
+```bash
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt update
+sudo apt install golang-go
+```
+
 ## 实战
 
 * 开始一个项目

@@ -28,6 +28,7 @@ ulimit -a
 ulimit -S -n 2048
 # 查看某进程打开的文件
 lsof -p <pid> | wc -l
+lsof -p $(ps -e | grep hub | grep -v grep | awk '{print $1}') | wc -l
 ```
 
 ### 动态主机配置协议（DHCP）
@@ -53,25 +54,6 @@ ICMP与UDP一样，是不可靠的通信
 > ps: TTL Time To Live 存活时间，指数据包在经过路由器时，可传输的最大跃点数（每经过一个路由器时，其存活次数减一）
 
 ping的运作原理就是向目标主机传出一个ICMP的echo数据包，并等待回应
-
-### 关于定时器的使用(crontab)
-
-每5s向指定文件中打印hello world
-
-```bash
-touch task.cron
-echo "*/5 * * * * * echo 'hello word' >> /tmp/hello.log" > task.cron
-crontab task.cron # 启用定时任务
-crontab -l  # 查看任务列表
-crontab -r  # 清除任务
-```
-
-```bash
-sudo service cron restart   # 重启
-sudo service cron start     # 启动
-sudo service cron stop      # 停止
-sudo service cron status    # 查看服务状态
-```
 
 ### 修改 Linux swap 分区
 
