@@ -132,11 +132,18 @@ git pull
 
 * 修改历史 commit 和 auther 信息
 
-```base
+```bash
 git rebase -i HEAD~6
 git commit --amend
 git commit --amend --author "zhanghang <zhcppy@icloud.com>"
 git rebase --continue
+```
+
+* git仓库转移
+
+```bash
+git clone --bare 
+git push --mirror 
 ```
 
 ## 生成sshkey

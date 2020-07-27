@@ -35,3 +35,9 @@ replace-with = "ustc"
 [source.ustc]
 registry = "git://mirrors.ustc.edu.cn/crates.io-index"
 ```
+
+
+#### Macro rules
+
+宏系统，元编程
+调用宏时不是调用函数，调用宏会在编程阶段将宏转为可编译的源代码与其它程序一起运行
