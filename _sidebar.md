@@ -1,10 +1,8 @@
 - Home
     * [Golang](guides/golang.md)
-    * [Nodejs](guides/nodejs.md)
-    * [JavaScript](guides/javascript.md)
-    * [Python](guides/python.md)
     * [Rust](guides/rust.md)
-    * [Frontend](guides/frontend.md)
+    * [Nodejs](guides/nodejs.md)
+    * [Python](guides/python.md)
 - BlockChain
     * [Cosmos](blockchain/cosmos/README.md)
     * [Ethereum](blockchain/eth/README.md)
@@ -31,12 +29,11 @@
     * [Redis](tools/redis.md)
     * [Makefile](tools/makefile.md)
     * [Jetbrains](tools/jetbrains/README.md)
-- Learn
-    * [浮点数运算](learn/float.md)
-    * [布隆过滤器](learn/bloom-filter.md)
-    * [笔记](learn/notes.md)
 - Other
     * [WebRTC](other/webrtc.md)
     * [BigData](other/bigdata.md)
     * [Android](other/android/README.md)
     * [Hexo](other/hexo.md)
+    * [浮点数运算](learn/float.md)
+    * [布隆过滤器](learn/bloom-filter.md)
+    * [笔记](learn/notes.md)

@@ -44,41 +44,42 @@ tmux 下可以有多个会话，会话下又可以有多个窗口，那么同样
 
 ## tmux 的基本操作
 
-前置操作(`Prefix-Command`)，所有下面介绍的快捷键，都必须以前置操作开始。tmux 默认的前置操作是`CTRL+b`。
+前置操作(`Prefix-Command`)，所有下面介绍的快捷键，都必须以前置操作开始。tmux 默认的前置操作是`ctrl+b`。
 
 ### 会话相关
 
 - 新建会话(create): `tmux new-session -s <会话名称>` or `tmux new -s <会话名称>`
-- 分离会话(detach): `prefix d`,退出 tmux 但是不关闭掉进程，方便下次进入
+- 分离会话(detach): `ctrl+b d`,退出 tmux 但是不关闭掉进程，方便下次进入
 - 连接会话(attach): `tmux attach -t <目标会话名>` or `tmux a -t <目标会话名>`, 被分离的会话，还可以重新连接上
 - `tmux ls`: 列出所有的会话
-- `prefix $`: 重命名当前会话
+- `ctrl+b $`: 重命名当前会话
 
 ### 窗口相关
 
 - `tmux new -n <窗口名>`: 创建会话的时候附上 `-n` 参数，来给窗口制定一个名称
-- 新建窗口: `prefix c`
-- 上一个窗口（previous）: `prefix p`
-- 下一个窗口（next）: `prefix n`
-- 切换到上一个活动的窗口: `prefix space`
-- 使用窗口号切换: `prefix 窗口号`
-- 窗口列表: `prefix w`
-- 关闭一个窗口: `prefix &`
-- 更改窗口名称: `prefix ,`
+- 新建窗口: `ctrl+b c`
+- 上一个窗口（previous）: `ctrl+b p`
+- 下一个窗口（next）: `ctrl+b n`
+- 切换到上一个活动的窗口: `ctrl+b space`
+- 使用窗口号切换: `ctrl+b 窗口号`
+- 窗口列表: `ctrl+b w`
+- 关闭一个窗口: `ctrl+b &`
+- 更改窗口名称: `ctrl+b ,`
 
 ## 窗格相关
 
-- 查看所有窗格的编号: `prefix q`
-- 垂直切分（把窗口垂直切分成左右两等分）：`prefix %`
-- 水平切分（把窗口水平切分成上下两等分）：`prefix "`
-- 窗格切换: `prefix o`
-- 按制定方向切换窗格: `prefix 方向键`
-- 更改窗格布局: `prefix 空格`, 可以在这五个默认的窗格布局之中轮流切换:
+- 查看所有窗格的编号: `ctrl+b q`
+- 垂直切分（把窗口垂直切分成左右两等分）：`ctrl+b %`
+- 水平切分（把窗口水平切分成上下两等分）：`ctrl+b "`
+- 窗格切换: `ctrl+b o`
+- 按制定方向切换窗格: `ctrl+b 方向键`
+- 更改窗格布局: `ctrl+b 空格`, 可以在这五个默认的窗格布局之中轮流切换:
   - 水平平分（even-horizontal）
   - 垂直平分（even-vertical）
   - 主窗格最大化，其他窗格水平平分（main-horizontal）
   - 主窗格最大化，其他窗格垂直平分（main-vertical）
   - 平铺，窗格均等分（tiled）
+- 滚屏：`ctrl +b [`
 
 ## 参考资料
 

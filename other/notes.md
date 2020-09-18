@@ -1,4 +1,4 @@
-# notes
+# Notes
 
 * nginx config 配置工具
 

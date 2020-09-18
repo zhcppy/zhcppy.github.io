@@ -25,7 +25,7 @@
         basePath: '', //基础路径
         // relativePath: true, //启用相对路径
         // coverpage: true, //启用封面
-        logo: 'favicon.ico', //侧边栏中的网站徽标
+        // logo: 'favicon.ico', //侧边栏中的网站徽标
         name: 'zhcppy', // 侧栏中显示的网站名称
         nameLink: '/#/README', //名称链接
         themeColor: '#42b983', //主题颜色
@@ -71,6 +71,31 @@
                     return html + footer;
                 });
             },
+            // @:https://github.com/docsifyjs/docsify/issues/728
+            function(hook, vm) {
+                hook.doneEach(function() {
+                    document.querySelectorAll(".sidebar-nav > ul > li").forEach(
+                        function(node, index, nodelist) {
+                            let span = document.createElement("span");
+                            span.innerHTML = node.firstChild.data;
+                            span.style.cursor = "pointer";
+                            span.onclick = function(event) {
+                                let ul = event.target.nextElementSibling;
+                                if (ul.style.display === "none") {
+                                    ul.style.display = "block";
+                                } else {
+                                    ul.style.display = "none";
+                                }
+                            };
+                            node.firstChild.replaceWith(span);
+                            node.lastChild.style.display = "none";
+                        });
+                    let active = document.querySelector(".sidebar-nav li.active");
+                    if (active) {
+                        active.parentElement.style.display = "block";
+                    }
+                });
+            }
         ],
     }
 </script>

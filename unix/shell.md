@@ -1,9 +1,14 @@
 # Shell Script
 
+## trap
+
 ## Demo
 
 ```bash
 #!/usr/bin/env bash
+
+set -eux
+set -o pipefail
 
 # shell is funny
 
