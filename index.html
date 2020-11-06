@@ -19,7 +19,7 @@
         maxLevel: 4, //内容中最大级别
         // loadNavbar: true, //加载导航栏
         loadSidebar: true, //加载侧边栏
-        subMaxLevel: 3, //在自定义侧边栏中添加目录最大级别
+        subMaxLevel: 2, //在自定义侧边栏中添加目录最大级别
         auto2top: true, //更改路线时滚动到屏幕顶部
         homepage: 'README.md', //主页
         basePath: '', //基础路径
@@ -72,6 +72,7 @@
                 });
             },
             // @:https://github.com/docsifyjs/docsify/issues/728
+            // 导航栏折叠和展开
             function(hook, vm) {
                 hook.doneEach(function() {
                     document.querySelectorAll(".sidebar-nav > ul > li").forEach(

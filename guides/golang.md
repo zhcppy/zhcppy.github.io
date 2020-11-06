@@ -2,7 +2,14 @@
 
 强类型 跨平台 二进制运行
 
-## GC(垃圾回收)
+* Ubuntu 安装最新版golang
+```bash
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt update
+sudo apt install golang-go
+```
+
+## 垃圾回收（GC）
 
 自动的存储器管理机制，当计算机上的动态存储器不再需要使，就应该予以释放，以让出存储器，这种存储器资源管理被称为垃圾回收。
 
@@ -47,19 +54,6 @@ Golang中有三种引用类型：切片slice、哈希表map、管道channel，�
 Golang 使用拉链法来解决哈希碰撞的问题实现哈希表，它的访问、写入和删除等操作都在编译期间转换成了运行时的函数和方法。
 哈希在每一个桶中存储键对应哈希的前8位，当对哈希进行操作时，这些topHash就成为了一级缓存帮助哈希快速遍历桶中元素，每一个桶只能存储8个键值对，一旦当前哈希的某个桶超出8个，新的键值对就会被存储在哈希的溢出桶中。
 随着键值对数量的增加，溢出桶的数量和哈希的装载因子也会逐渐升高，超过一定范围后就会触发扩容，扩容会将桶的数量翻倍，元素再分配的过程也是在调用写操作时增量进行的，不会造成性能的瞬时巨大抖动。
-
-## study blog
-
-https://yourbasic.org/golang/
-
-http://wiki.jikexueyuan.com/list/go/
-
-## Ubuntu 安装最新版golang
-```bash
-sudo add-apt-repository ppa:longsleep/golang-backports
-sudo apt update
-sudo apt install golang-go
-```
 
 ## 实战
 
@@ -212,3 +206,9 @@ GOPROXY=https://goproxy.io GO111MODULE=on go mod tidy
 
 
 编译生成aar文件，将aar添加为android项目lib[方式](https://developer.android.com/studio/projects/android-library)
+
+## 学习资源
+
+https://yourbasic.org/golang/
+
+http://wiki.jikexueyuan.com/list/go/

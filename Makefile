@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-.PHONY: push preview commit http
+.PHONY: push commit preview
 
 TIME_NOW=$$(date +"%Y-%m-%d %H:%M.%S")
 
@@ -15,6 +15,3 @@ commit:
 preview:
 	@which python3 && python3 -m http.server --bind 0.0.0.0 4000
 	#which python && python -m SimpleHTTPServer 4000
-
-http:
-	@http-server . -p 4000 || echo "Please Run 'npm install http-server -g' to Install"

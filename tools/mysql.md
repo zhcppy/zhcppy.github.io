@@ -107,7 +107,7 @@ UPDATE mysql.user SET Password=PASSWORD('new-password-here') WHERE USER='user-na
 mysqldump -uroot -proot1234 --databases btc_prod > btc_prod.sql
 ```
 
-## 命令使用
+### 命令使用
 
 ```sql
 # 显示所有数据库

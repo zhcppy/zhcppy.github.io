@@ -2,10 +2,6 @@
 
 使用[Hexo](https://hexo.io/zh-cn/)和[Github](https://github.com)搭建的个人博客网站
 
-## 开始吧
-这是我在windows系统下搭建这个博客的过程
-PS.我发誓！我再也不会在windows上写一行代码【2018.12.23】
-
 ## 安装工具
 - 安装[git](https://git-scm.com/)
 - 安装[Node.js](https://nodejs.org/en/)
@@ -20,11 +16,11 @@ PS.我发誓！我再也不会在windows上写一行代码【2018.12.23】
 
 1.创建网站的根目录
 
-    $ hexo init D:/blog
+    $ hexo init /home/zhcppy/blog
 
 2.进入目录
 
-    $ cd D:/blog
+    $ cd /home/zhcppy/blog
 
 3.初始化网站，[Hexo](https://hexo.io/zh-cn/) 将会在指定文件夹中新建所需要的文件，这个过程可能有点慢
 
@@ -120,16 +116,16 @@ PS.我发誓！我再也不会在windows上写一行代码【2018.12.23】
 
     INFO  Start processing
     FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
-    Error: watch /home/XXXXXXX/blog/source/ ENOSPC
+    Error: watch /home/zhcppy/blog/source/ ENOSPC
         at exports._errnoException (util.js:1018:11)
         at FSWatcher.start (fs.js:1443:19)
         at Object.fs.watch (fs.js:1470:11)
-        at createFsWatchInstance (/home/XXXXXXX/blog/node_modules/chokidar/lib/nodefs-handler.js:37:15)
-        at setFsWatchListener (/home/XXXXXXX/blog/node_modules/chokidar/lib/nodefs-handler.js:80:15)
-        at FSWatcher.NodeFsHandler._watchWithNodeFs (/home/XXXXXXX/blog/node_modules/chokidar/lib/nodefs-handler.js:228:14)
-        at FSWatcher.NodeFsHandler._handleDir (/home/XXXXXXX/blog/node_modules/chokidar/lib/nodefs-handler.js:407:19)
-        at FSWatcher.<anonymous> (/home/XXXXXXX/blog/node_modules/chokidar/lib/nodefs-handler.js:455:19)
-        at FSWatcher.<anonymous> (/home/XXXXXXX/blog/node_modules/chokidar/lib/nodefs-handler.js:460:16)
+        at createFsWatchInstance (/home/zhcppy/blog/node_modules/chokidar/lib/nodefs-handler.js:37:15)
+        at setFsWatchListener (/home/zhcppy/blog/node_modules/chokidar/lib/nodefs-handler.js:80:15)
+        at FSWatcher.NodeFsHandler._watchWithNodeFs (/home/zhcppy/blog/node_modules/chokidar/lib/nodefs-handler.js:228:14)
+        at FSWatcher.NodeFsHandler._handleDir (/home/zhcppy/blog/node_modules/chokidar/lib/nodefs-handler.js:407:19)
+        at FSWatcher.<anonymous> (/home/zhcppy/blog/node_modules/chokidar/lib/nodefs-handler.js:455:19)
+        at FSWatcher.<anonymous> (/home/zhcppy/blog/node_modules/chokidar/lib/nodefs-handler.js:460:16)
         at FSReqWrap.oncomplete (fs.js:123:15)
 
 可以运行 $ npm dedupe 来尝试解决，如果不起作用的话，可以尝试在 Linux 终端中运行下列命令：

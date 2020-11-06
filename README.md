@@ -4,3 +4,5 @@
 [![author](https://img.shields.io/badge/Author-zhcppy-brightgreen)](https://github.com/zhcppy)
 
 > **Time** is money, my friend!
+
+[index.html](index.html ':include :type=code html')

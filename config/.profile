@@ -1,9 +1,9 @@
 # Golang
+#export GOPRIVATE=
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export GO111MODULE=auto
-#export GOPRIVATE=
 export GOPROXY=https://goproxy.io,direct
 export GOSUMDB=sum.golang.google.cn
 export PATH=$PATH:$GOBIN:$GOROOT/bin
@@ -19,7 +19,6 @@ export JRE_HOME=/usr/local/java/jdk1.8/jre
 export CLASSPATH=$JAVA_HOME/lib:$JRE_HOME/lib
 export MAVEN_HOME=/usr/local/maven
 export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin:$MAVEN_HOME/bin
-# maven
 export PATH=$PATH:/usr/local/apache-maven/bin
 
 # Android

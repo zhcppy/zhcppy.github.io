@@ -2,7 +2,7 @@
 
 事件驱动、非阻塞式 I/O
 
-## 安装
+### 安装
 
 * MAC 安装 nodejs
 
@@ -33,7 +33,7 @@ https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
 ```
 
-## npm 包管理工具
+### npm 包管理工具
 
 ```bash
 # npm是随同node.js一起安装的，设置npm国内淘宝代理镜像
@@ -248,7 +248,7 @@ ws.onclose = function(err) {
 };
 ```
 
-* Console
+* Chrome Console
 
 ```javascript
 // 断言并输出

@@ -75,6 +75,8 @@ https://www.cnblogs.com/peida/tag/linux%E5%91%BD%E4%BB%A4
 - netstat -lntp 查看所有监听端口
 - netstat -antp 查看所有已经建立的连接
 - netstat -s 查看网络统计信息
+- traceroute 网络诊断
+  
 
 ## 进程
 

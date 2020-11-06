@@ -49,11 +49,63 @@ SNX的价值来源于使用网络的权利，和收取因Synth交易产生的费
 
 * 合成资产由抵押SNX或ETH的750%价值所产生
 * 正向合成资产与对标资产正相关，反向合成资产与对标的资产呈负相关
-* 反向合成资产有三个关键数据：入场价、下限和上限，所以反向合成资产是有交易范围的，这将限制用户在反向资产上获得的最大盈亏，当达到限制时，
-* 反向合成资产
+* 反向合成资产有三个关键数据：入场价、下限和上限，所以反向合成资产是有交易范围的，这将限制用户在反向资产上获得的最大盈亏，
+  当达到限制时，通证的汇率将被冻结并清算头寸。发生冻结或清算后，这些反向合成资产只能以固定值在synthetix交易所进行兑换，然后重新设置上下限
+* 合成资产使交易者可以对资产进行价格敞口，而无需实际持有基础资产，合成资产使得交易者以更低的门槛进入市场
+* 抵押创建合成资产，即表示抵押者承担了债务，并且债务水平会根据全球债务池中合成资产的总价值发生动态变化，从而导致抵押者所欠债务随着价值的变化而波动
+* 合成资产的创建、管理和销毁是通过Mintr实现，合成资产的交易是通过Synthetix.exchange来完成的
+* 合成资产在Synthetix.exchange上进行交易时是无需对手方的，交易的本质是销毁sell资产，铸造buy资产，此时buy资产的总量也会增加，此时债务会转变
+* SNX的市值对应了Synthetix.exchange中sUSD的最大总量
+* 
+
+### 源码分析
+
+AddressResolver：地址解析，作用是可以通过名称找到对应的合约地址，方便升级合约， https://fravoll.github.io/solidity-patterns/proxy_delegate.html
+EternalStorage: 永恒的存储，用于存储数据，方便升级合约时不用迁移数据，https://fravoll.github.io/solidity-patterns/eternal_storage.html
+EtherCollateral: ETH抵押，存在利息，没有交易费或SNX股权奖励，
+ExchangeRates：存储最新的Synth汇率，三分钟更新一次，也负责逆向合成资产的价格
+ExchangeState：
+Exchanger：执行exchange（兑换）和settle（结算）功能
+ExternStateToken：用于存储余额和token信息
+FeePool：
+FeePoolEternalStorage
+FeePoolState
+FlexibleStorage
+IssuanceEternalStorage
+Issuer
+LimitedSetup
+Liquidations
+MixinResolver
+MixinSystemSettings
+MultiCollateralSynth
+Owned
+Pausable
+Proxy
+ProxyERC20
+Proxyable
+PurgeableSynth
+ReadProxy
+RewardEscrow
+RewardsDistribution
+RewardsDistributionRecipient
+SelfDestructible
+StakingRewards
+State
+SupplySchedule
+Synth
+SynthUtil
+Synthetix
+SynthetixEscrow
+SynthetixState
+SystemSettings
+SystemStatus
+TokenState
+TradingRewards
 
 
 * 通正：Token、代币、令牌、信令
+* 头寸：款项、资金
+* 敞口：开盘的意思，指买入一种货币，同时卖出另一种货币的行为；指在金融活动中存在金融风险的部位以及受金融风险影响的程度
 
 # 金融逻辑
 

@@ -2,7 +2,7 @@
 
 Python是一种解释型、面向对象、动态数据类型的高级程序设计语言。
 
-## 安装
+### 安装
 
 * python3
 
@@ -22,7 +22,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 ```
 
-## python3 tool
+### python3 tool
 
 ```bash
 # file server
@@ -43,7 +43,7 @@ python3 -m zipfile -c xx.zip aa.txt bb.txt
     
 ```
 
-## python3 lib
+### python3 lib
 
 ```
 # 阻塞式http请求库
@@ -81,7 +81,9 @@ pip3 install tesserocr pillow
 
 [Source code](https://github.com/zhcppy/python/blob/master/crawler/motto/__init__.py)
 
-## MongoDB
+## 实战
+
+### MongoDB
 
 [Source code](https://github.com/zhcppy/python/blob/master/mongodb/mongodb.py)
 
