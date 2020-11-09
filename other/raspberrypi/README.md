@@ -1,3 +1,3 @@
 # 树莓派
 
-[run](/other/raspberrypi/run.sh ':ignore')
+[run.sh](run.sh ':include :type=code bash')
