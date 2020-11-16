@@ -1,5 +1,7 @@
 # Linux
 
+### 根目录说明
+
 - `/boot`启动//内核驱动等
 - `/dev`硬件
 - `/etc`配置
@@ -54,6 +56,20 @@ ICMP与UDP一样，是不可靠的通信
 > ps: TTL Time To Live 存活时间，指数据包在经过路由器时，可传输的最大跃点数（每经过一个路由器时，其存活次数减一）
 
 ping的运作原理就是向目标主机传出一个ICMP的echo数据包，并等待回应
+
+### Maximum Transmission Unit (MTU) 
+
+最大传输单元(MTU)是可以在单个网络层事务中进行通讯的最大协议数据单元(PDU)的大小（https://en.wikipedia.org/wiki/Maximum_transmission_unit）
+
+**ping -c (number) -M do -s (bytes) IP**
+
+number是次数 bytes是封包大小
+
+ping -c 3 -M do -s 1472 192.168.31.1
+
+ping -c 3 -M do -s 1452 baidu.com
+
+调整MTU值:  **ifconfig eth0 mtu 1500**
 
 ### 修改 Linux swap 分区
 

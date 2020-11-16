@@ -119,7 +119,7 @@ geth console ==> admin.startRPC(addr, port)
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_coinbase","params":[],"id":64}' localhost:8545
 ```
 
-### 以太坊智能合约
+### 智能合约
 
 从智能合约的代码到使用智能合约，大概包含以下步骤
 

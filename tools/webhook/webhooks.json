@@ -1,0 +1,36 @@
+[
+  {
+    "id": "zhcppy",
+    "execute-command": "/home/ubuntu/go/src/zhcppy/webhook/run.sh",
+    "command-working-directory": "/home/ubuntu/go/src/zhcppy",
+    "response-message": "execute success",
+    "include-command-output-in-response": true,
+    "include-command-output-in-response-on-error": true,
+    "trigger-rule-mismatch-http-response-code": 400,
+    "incoming-payload-content-type": "application/json",
+    "success-http-response-code": 200,
+    "http-methods": [
+      "POST"
+    ],
+    "pass-arguments-to-command": [
+      {
+        "source": "payload",
+        "name": "repository.name"
+      }
+    ],
+    "trigger-rule": {
+      "and": [
+        {
+          "match": {
+            "type": "payload-hash-sha256",
+            "secret": "zhcppy",
+            "parameter": {
+              "source": "header",
+              "name": "X-Gogs-Signature"
+            }
+          }
+        }
+      ]
+    }
+  }
+]

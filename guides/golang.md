@@ -3,10 +3,21 @@
 强类型 跨平台 二进制运行
 
 * Ubuntu 安装最新版golang
+
 ```bash
 sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
 sudo apt install golang-go
+```
+
+* go lib proxy
+
+```bash
+export GOPROXY=https://goproxy.cn,direct
+```
+or
+```bash
+export GOPROXY=https://goproxy.io,direct
 ```
 
 ## 垃圾回收（GC）
@@ -116,6 +127,20 @@ func checkExecEnv() error {
 		}
 	}
 	return nil
+}
+```
+
+* 生成唯一表示
+
+```go
+const letterBytes = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+func UUID(n int) string {
+	b := make([]byte, n)
+	for i := range b {
+		b[i] = letterBytes[rand.Intn(len(letterBytes))]
+	}
+	return string(b)
 }
 ```
 

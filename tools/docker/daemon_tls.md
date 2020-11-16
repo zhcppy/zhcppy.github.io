@@ -15,8 +15,8 @@ openssl genrsa -aes256 -out ca-key.pem 4096
 Country Name: CN  
 State or Province Name: Guangzhou  
 Locality Name: Shenzhen  
-Organization Name: Pundix  
-Organizational Unit Name: FX  
+Organization Name: China  
+Organizational Unit Name: zhcppy  
 
 ```bash
 openssl req -new -x509 -days 365 -key ca-key.pem -sha256 -out ca.pem
@@ -71,25 +71,10 @@ openssl x509 -req -days 365 -sha256 -in client.csr -CA ca.pem -CAkey ca-key.pem 
 
 #sudo apt-get install language-pack-zh
 
-sudo locale-gen zh_CN.UTF-8
+# sudo locale-gen zh_CN.UTF-8
 
-sudo apt-get update
-
-sudo apt-get upgrade -y
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-sudo apt-key fingerprint 0EBFCD88
-
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-
-sudo apt-get update
-
-sudo apt-get install docker-ce -y
-
-sudo groupadd docker
-
-sudo usermod -aG docker ${USER}
+# 安装 docker
+./install_docker.sh
 
 sudo touch /etc/docker/daemon.json
 
@@ -120,12 +105,12 @@ EOF
 
 mkdir -p ~/.docker/server
 
-curl -k -u nash:${PASSWORD} -o ~/.docker/server/ca.pem  https://git.wokoworks.com:4430/blockchain/cloud-backend/raw/8200f15c2403fe3980326f44f4d94ac19af332d0/aws/docker/server/ca.pem
-curl -k -u nash:${PASSWORD} -o ~/.docker/server/cert.pem https://git.wokoworks.com:4430/blockchain/cloud-backend/raw/8200f15c2403fe3980326f44f4d94ac19af332d0/aws/docker/server/cert.pem
-curl -k -u nash:${PASSWORD} -o ~/.docker/server/key.pem https://git.wokoworks.com:4430/blockchain/cloud-backend/raw/8200f15c2403fe3980326f44f4d94ac19af332d0/aws/docker/server/key.pem
-curl -k -u nash:${PASSWORD} -o ~/.docker/ca.pem https://git.wokoworks.com:4430/blockchain/cloud-backend/raw/8200f15c2403fe3980326f44f4d94ac19af332d0/aws/docker/client/ca.pem
-curl -k -u nash:${PASSWORD} -o ~/.docker/cert.pem https://git.wokoworks.com:4430/blockchain/cloud-backend/raw/8200f15c2403fe3980326f44f4d94ac19af332d0/aws/docker/client/cert.pem
-curl -k -u nash:${PASSWORD} -o ~/.docker/key.pem https://git.wokoworks.com:4430/blockchain/cloud-backend/raw/8200f15c2403fe3980326f44f4d94ac19af332d0/aws/docker/client/key.pem
+cp server/ca.pem ~/.docker/server/ca.pem
+cp server/cert.pem ~/.docker/server/cert.pem
+cp server/key.pem ~/.docker/server/key.pem
+cp client/ca.pem ~/.docker/ca.pem
+cp client/cert.pem ~/.docker/cert.pem
+cp client/key.pem ~/.docker/key.pem
 
 sudo systemctl daemon-reload
 
@@ -135,8 +120,6 @@ sudo systemctl status docker
 
 docker --tls -H 127.0.0.1:2376 ps
 docker --tls -H 0.0.0.0:2376 ps
-
-#docker --tls -H 0.0.0.0:2376 exec -it fx-mysql mysql -uroot -p12345678
 
 ```
 

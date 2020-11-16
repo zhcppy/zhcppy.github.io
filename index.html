@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>zhcppy</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CRWGHJBZT9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CRWGHJBZT9');
+    </script>
+
+    <title>zhcppy的博客</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="golang,blockchain,blog,github,zhcppy,zhanghang">
-    <meta name="description" content="A strange programmer life.">
-    <link rel="icon" href="">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@latest/themes/vue.css">
 </head>
 <body>
@@ -76,7 +85,7 @@
             function(hook, vm) {
                 hook.doneEach(function() {
                     document.querySelectorAll(".sidebar-nav > ul > li").forEach(
-                        function(node, index, nodelist) {
+                        function(node) {
                             let span = document.createElement("span");
                             span.innerHTML = node.firstChild.data;
                             span.style.cursor = "pointer";
@@ -110,6 +119,7 @@
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-makefile.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>
 </body>
 </html>
